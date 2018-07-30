@@ -4,7 +4,8 @@ CREATE TABLE systemUser
 name VARCHAR(50),
 surname VARCHAR(50),
 email VARCHAR(50) NOT NULL UNIQUE,
-phone VARCHAR(50) NOT NULL);
+phone VARCHAR(50) NOT NULL,
+password VARCHAR(10) NOT NULL);
 
 DROP TABLE IF EXISTS manager;
 CREATE TABLE manager
@@ -26,7 +27,7 @@ DROP TABLE IF EXISTS student CASCADE;
 CREATE TABLE student
 (id_student SERIAL PRIMARY KEY,
 id_sustemUser INTEGER REFERENCES systemUser,
-id_level INTEGER REFERENCES level);
+id_class INTEGER REFERENCES class);
 
 DROP TABLE IF EXISTS class CASCADE;
 CREATE TABLE class
@@ -40,17 +41,14 @@ id_mentor INTEGER REFERENCES mentor,
 id_class INTEGER REFERENCES class);
 
 DROP TABLE IF EXISTS student_class; --
-CREATE TABLE student_class
-(id_student INTEGER REFERENCES student,
-id_class INTEGER REFERENCES class,
-PRIMARY KEY (id_student, id_class));
 
 DROP TABLE IF EXISTS artifact CASCADE;
 CREATE TABLE artifact
 (id_artifact SERIAL PRIMARY KEY,
 name VARCHAR(50) UNIQUE NOT NULL,
 description TEXT,
-type VARCHAR(50));
+type VARCHAR(50),
+price INTEGER NOT NULL);
 
 DROP TABLE IF EXISTS team CASCADE;
 CREATE TABLE team
