@@ -51,7 +51,6 @@
         <input type="text" name="classInput" id="class-name" onkeyup="toggleClassSubmitability()"><br>
         <div class="error" id="classname-error" style="display: none">Enter class name</div>
         <button type="submit" id="submitClass" style="float:left" disabled>SUBMIT</button>
-        <button type="reset" id="reset">RESET</button>
     </form>
 
 </section>
@@ -59,16 +58,16 @@
 <section id="section4">
         <form id="createLevel" action="" method="post" onsubmit="return toggleLevelSubmitability()"> <!--TODO: action-->
             <label for="levelName">ENTER LEVEL NAME</label><br>
-            <input type="text" name="levelNameInput" id="level-name"> 
+            <input type="text" name="levelNameInput" id="level-name" required> 
             <br>
             <div class="error" id="levelName-error" style="display: none">Enter level name</div>
             <br>
             <label for="amountOfMoney">ENTER AMOUNT OF MONEY FOR LEVEL</label><br>
-            <input type="number" name="levelAmount" min="0" id="level-amount" onkeyup="toggleLevelSubmitability()"><br>
+            <input type="number" name="levelAmount" min="0" step="1" id="level-amount" onkeyup="toggleLevelSubmitability()" required><br>
             <div class="error" id="levelAmount-error" style="display: none">
             </div>
             <button type="submit" id="submitLevel" style="float:left" disabled>SUBMIT</button>
-            <button type="reset" id="reset">RESET</button>
+            <br><br>
         </form>
 
 

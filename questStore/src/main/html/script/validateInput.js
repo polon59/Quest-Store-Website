@@ -1,7 +1,6 @@
 function classNameIsEmpty(){
     var className = document.getElementById("class-name").value;
-    var incorrectName = "";
-    if (className == incorrectName) {
+    if (className == "") {
         return true;
     } else return false;
 }
@@ -14,8 +13,7 @@ function validateClassName(){
 
 function toggleClassSubmitability(){
     var submitClassButton = document.getElementById("submitClass");
-    var check = classNameIsEmpty();
-    if (check) {
+    if (classNameIsEmpty()) {
         submitClassButton.setAttribute("disabled", "true")
     } else
         submitClassButton.removeAttribute("disabled");
@@ -26,33 +24,31 @@ function showError(id){
 }
 
 
-
 function levelNameIsEmpty(){
     var levelName = document.getElementById("level-name").value;
-    var incorrectName = "";
-    if (levelName == incorrectName) {
+    if (levelName == "") {
         return true;
     } else return false;
 }
 
 function amountIsEmpty(){
     var amount = document.getElementById("level-amount").value;
-    var incorrectAmount = NaN;
-    if (amount == incorrectAmount){
+    if (amount == NaN || amount.value.length==0){
         return true
     } return false;
 }
 
 
 function validateLevelData(){
-    if (!levelNameIsEmpty && !amountIsEmpty){
+    var levelName = document.getElementById("level-name").value;
+    if (levelName.value.length>0 && !amountIsEmpty()){
         return true;
     } else return false;
 }
 
 function toggleLevelSubmitability(){
     var submitLevelButton = document.getElementById("submitLevel");
-    if (validateLevelData() == true) {
+    if (levelNameIsEmpty() && amountIsEmpty()) {
         submitLevelButton.setAttribute("disabled", "true")
     } else
         submitLevelButton.removeAttribute("disabled");
