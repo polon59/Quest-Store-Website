@@ -42,7 +42,7 @@ li.navOpt a{
 }
 
 li.navOpt a:hover {
-    color: rgb(175, 37, 37);
+    color: rgb(88, 71, 71);
 }
 
 .mainOptions{
@@ -62,10 +62,7 @@ li.navOpt a:hover {
     left: -50%;
 }
 
-
-
-
-div.galleryElement {
+.galleryElement {
     margin-left: 25px;
     margin-right: 25px;
     border: 1px solid rgb(255, 255, 255);
@@ -75,11 +72,11 @@ div.galleryElement {
     text-align: center;
 }
 
-div.galleryElement:hover {
+.galleryElement:hover {
     border: 1px solid rgba(180, 97, 97, 0.247);
 }
 
-div.galleryElement img {
+.galleryElement img {
     width: 100%;
     height: auto;
 }
@@ -89,6 +86,22 @@ div.desc {
     text-align: center;
 }
 
+/* table{
+    border: 1px solid black;
+} */
+
+th{
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+td{
+    border-bottom: 0.2px solid gray;
+}
+
+.centeredSection{
+    display: flex;
+    flex-direction: column;
+}
 
 
 
