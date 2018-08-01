@@ -1,0 +1,122 @@
+
+div.hello img{
+    width: 25%;
+    height: 15%;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+li{
+    list-style-type: none; 
+}
+
+div.navbar{
+    display: inline-block;
+    width: 100%;
+    background-color: rgb(187, 187, 187);
+    margin: 0;
+    padding: 0;
+    position: sticky;
+    text-align: center;
+    top: 0;
+    z-index: 1;
+}
+
+ul.navList{
+    display: inline-block;
+    float: none;
+    text-align: center;
+    padding: 0;
+}
+
+li.navOpt{
+    float: right;
+}
+
+li.navOpt a{
+    text-align: center;
+    padding: 14px 16px;
+}
+
+li.navOpt a:hover {
+    color: rgb(175, 37, 37);
+}
+
+.mainOptions{
+    float: left;
+    position: relative;
+    left: 50%;
+    text-align: center;
+}
+
+#section3{
+    display: inline-block;
+}
+
+.gallery{
+    float: left;
+    position: relative;
+    left: -50%;
+}
+
+
+
+
+div.galleryElement {
+    margin-left: 25px;
+    margin-right: 25px;
+    border: 1px solid rgb(255, 255, 255);
+    float: left;
+    width: 150px;
+    height: 120%;
+    text-align: center;
+}
+
+div.galleryElement:hover {
+    border: 1px solid rgba(180, 97, 97, 0.247);
+}
+
+div.galleryElement img {
+    width: 50%;
+    height: auto;
+}
+
+div.desc {
+    padding: 5px;
+    text-align: center;
+}
+
+
+
+
+
+
+div.productSection {
+    margin: 25px;
+    margin-bottom: 50px;
+    border: 1px solid rgb(240, 240, 240);
+    width: 100% auto; 
+    text-align: center;
+}
+
+div.product{
+    left: -50%;
+}
+
+div.productSection img {
+    width: 200px;
+    height: 125px;
+    margin: 5px;
+}
+
+footer{
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    background-color: rgb(163, 155, 155);
+    margin: 0px;
+}
+
