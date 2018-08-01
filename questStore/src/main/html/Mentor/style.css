@@ -46,23 +46,12 @@ li.navOpt a:hover {
 }
 
 .mainOptions{
-    float: left;
-    position: relative;
-    left: 50%;
-    text-align: center;
-}
-
-#section3{
-    display: inline-block;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 }
 
 .gallery{
-    float: left;
-    position: relative;
-    left: -50%;
-}
-
-.galleryElement {
     margin-left: 25px;
     margin-right: 25px;
     border: 1px solid rgb(255, 255, 255);
@@ -86,10 +75,6 @@ div.desc {
     text-align: center;
 }
 
-/* table{
-    border: 1px solid black;
-} */
-
 th{
     border-bottom: 1px solid rgb(0, 0, 0);
 }
@@ -101,28 +86,7 @@ td{
 .centeredSection{
     display: flex;
     flex-direction: column;
-}
-
-
-
-
-
-div.productSection {
-    margin: 25px;
-    margin-bottom: 50px;
-    border: 1px solid rgb(240, 240, 240);
-    width: 100% auto; 
-    text-align: center;
-}
-
-div.product{
-    left: -50%;
-}
-
-div.productSection img {
-    width: 200px;
-    height: 125px;
-    margin: 5px;
+    align-items: center;
 }
 
 footer{
