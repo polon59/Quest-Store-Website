@@ -95,6 +95,16 @@ li.navOpt a:hover {
     height: auto;
 }
 
+.buttonIkon {
+background-color: transparent;
+border: none;
+}
+
+button:focus {
+    outline: transparent;
+    outline-offset: -4px;
+}
+
 div.desc {
     padding: 5px;
     text-align: center;
