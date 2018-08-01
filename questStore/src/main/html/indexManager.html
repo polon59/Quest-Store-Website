@@ -10,6 +10,7 @@
 <header id="siteTitle"><strong>INDEX MANAGER</strong></header>
 <header>
     <script src="script/validateInput.js"></script>
+    <script src="script/toggle.js"></script>
 <div>
 <ul class="menuBar">
    <li class="menuOpt"><a href="indexManager.html">HOME</a></li>
@@ -45,7 +46,10 @@
 </div>
 </div>
 </section>
-<section id="section3">
+
+<button onclick="toggleClassCreation()">Create Class</button>
+
+<section id="createClassSection" style="display:none">
     <form id="createClass" action="" method="post" onsubmit="return toggleClassSubmitability()"> <!--TODO: action-->
         <label for="className">ENTER CLASS NAME</label><br>
         <input type="text" name="classInput" id="class-name" onkeyup="toggleClassSubmitability()"><br>
@@ -55,7 +59,10 @@
 
 </section>
 <br><br>
-<section id="section4">
+
+<button onclick="toggleLevelCreation()">Create Level</button>
+
+<section id="createLevelSection" style="display:none">
         <form id="createLevel" action="" method="post" onsubmit="return toggleLevelSubmitability()"> <!--TODO: action-->
             <label for="levelName">ENTER LEVEL NAME</label><br>
             <input type="text" name="levelNameInput" id="level-name" required> 
