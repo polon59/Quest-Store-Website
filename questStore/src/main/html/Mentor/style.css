@@ -80,7 +80,7 @@ div.galleryElement:hover {
 }
 
 div.galleryElement img {
-    width: 50%;
+    width: 100%;
     height: auto;
 }
 
