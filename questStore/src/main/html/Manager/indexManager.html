@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+
+<head>
+<title>MANAGER SITE</title>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+<header id="siteTitle"><strong>INDEX MANAGER</strong></header>
+<header>
+    <script src="../../script/manager/validateInput.js"></script>
+    <script src="../../script/manager/toggle.js"></script>
+    <div class="Hello">
+        <img>
+    </div>
+    <div class="Hello">
+        <p>Hello :)</p>
+    </div>
+</header>
+
+<div class="navbar">
+    <ul class="navlist">
+    <li class="navOpt"><a href="indexManager.html">HOME</a></li>
+    <li class="navOpt"><a href="accountManager.html">MY ACCOUNT</a></li>
+    </ul>
+</div>
+
+<section>
+    <div class="mainOptions">
+        <div class="gallery">
+                <a target="_blank" href="questsMentor.html">
+                    <img src="../../images/mentor/mentor_questIkon.png" alt="">
+                </a>
+                <h5>QUESTS (L)</h5>
+        </div>
+            
+        <div class="gallery">
+                <a target="_blank" href="artifactsMentor.html">
+                    <img src="../../images/mentor/mentor_artifactIkon.png" alt="">
+                </a>
+                <h5>ARTIFACTS (L)</h5>
+        </div>
+            
+        <div class="gallery">
+                <a target="_blank" href="link.html">
+                    <img src="../../images/mentor/mentor_toGradeIkon1.png" alt="">
+                </a>
+                <h5>TO GRADE</h5>
+        </div>
+        <div class="gallery">
+
+            <button onclick="toggleClassCreation()"><img src="../../images/manager/manager_classIkon.png"></button>
+
+            <section id="createClassSection" style="display:none">
+            <form id="createClass" action="" method="post" onsubmit="return toggleClassSubmitability()"> <!--TODO: action-->
+            <label for="className">ENTER CLASS NAME</label><br>
+            <input type="text" name="classInput" id="class-name" onkeyup="toggleClassSubmitability()"><br>
+            <div class="error" id="classname-error" style="display: none">Enter class name</div>
+            <button type="submit" id="submitClass" style="float:left" disabled>SUBMIT</button>
+    </form>
+
+</section>
+</div>
+        <div class="gallery">
+<button onclick="toggleLevelCreation()"><img src="../../images/manager/manager_levelIkon.png"></button>
+
+<section id="createLevelSection" style="display:none">
+        <form id="createLevel" action="" method="post" onsubmit="return toggleLevelSubmitability()"> <!--TODO: action-->
+            <label for="levelName">ENTER LEVEL NAME</label><br>
+            <input type="text" name="levelNameInput" id="level-name" required> 
+            <br>
+            <div class="error" id="levelName-error" style="display: none">Enter level name</div>
+            <br>
+            <label for="amountOfMoney">ENTER AMOUNT OF MONEY FOR LEVEL</label><br>
+            <input type="number" name="levelAmount" min="0" step="1" id="level-amount" onkeyup="toggleLevelSubmitability()" required><br>
+            <div class="error" id="levelAmount-error" style="display: none">
+            </div>
+            <button type="submit" id="submitLevel" style="float:left" disabled>SUBMIT</button>
+            <br><br>
+        </form>
+
+</section>
+</div>
+</section>
+<br><br>
+
+<footer>So something should show up :)</footer>
+
+</body>
+</html>
