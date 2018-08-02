@@ -19,7 +19,7 @@
     <div class="Hello">
         <img class="helloImg" src="../../images/common/hello.png" alt="Hello ikon">
     </div>
-    <!-- SCRIPTS -->
+    <script src="../../script/mentor/artifactsToggle.js"></script>
 </header>
 
 
@@ -27,102 +27,89 @@
     <div class="mainOptions asapDark"> 
         <div class="gallery">
             <h5>VIEW ALL</h5>
-            <a target="_blank" href="link.html">
-                <img src="../../images/mentor/mentor_viewAllAButton.png" alt="">
-            </a>
-        </div>
+                <button class="buttonIkon" onclick="toggleViewAllArtifacts()"><img src="../../images/mentor/mentor_viewAllAButton.png" alt=""></button>
+                <section id="viewAllArtifacts"  style="display:none">
+                    <div class="centeredSection">
+                        <h4>VIEW ALL</h4>
+                    <table>
+                        <tr>
+                            <th>no.</th>
+                            <th>Artifact name</th>
+                            <th>Owner Info</th>
+                            <th>Mark</th>
+                        </tr>
+                        <tr>
+                            <td>1.</td>
+                            <td>another Artifact</td>
+                            <td>another info</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>2.</td>
+                            <td>another Artifact</td>
+                            <td>another info</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>3.</td>
+                            <td>another Artifact</td>
+                            <td>another info</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>4.</td>
+                            <td>another Artifact</td>
+                            <td>another info</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>5.</td>
+                            <td>another Artifact</td>
+                            <td>another info</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                    </table>
+                    <p>Add options - input boxes</p>
+                </div>
+                </section>
+            </div>
+                
             
         <div class="gallery">
             <h5>ADD</h5>
-            <a target="_blank" href="link.html">
-                <img src="../../images/mentor/mentor_addAButton.png" alt="">
-            </a>
-        </div>
+            <button class="buttonIkon" onclick="toggleAddArtifact()"><img src="../../images/mentor/mentor_addAButton.png" alt=""></button>
+              <section id="addArtifact" style="display:none">
+                    <div class="centeredSection">
+                        <h4>ADD</h4>
+                        <p>Add options - input boxes</p>
+                    </div>
+            </section>
+            </div>
             
         <div class="gallery">
             <h5>CHANGE</h5>
-            <a target="_blank" href="link.html">
-                <img src="../../images/mentor/mentor_changeAButton.png" alt="">
-            </a>
+                <button class="buttonIkon" onclick="toggleChangeArtifactData()"><img src="../../images/mentor/mentor_changeAButton.png" alt=""></button>
+                <section id="changeArtifactData" style="display:none">
+                    <div class="centeredSection">
+                        <h4>CHANGE</h4>
+                        <p>Add options - input boxes, searcher</p>
+                </div>
+            </section>
         </div>
 
         <div class="gallery">
             <h5>FIND</h5>
-            <a target="_blank" href="link.html">
-                <img src="../../images/mentor/mentor_findAButton.png" alt="">
-            </a>
+            <button class="buttonIkon" onclick="toggleFindArtifact()"><img src="../../images/mentor/mentor_findAButton.png" alt=""></button>
+                <section id="findArtifact" style="display:none">
+                    <div class="centeredSection">
+                        <h4>FIND</h4>
+                        <p>Add options - input boxes, searcher</p>
+                    </div>
+                </section>
         </div>
     </div>
 </section>
 
-
-<section id="section6">
-    <div class="centeredSection">
-        <h4>ADD</h4>
-        <p>Add options - input boxes</p>
-    </div>
-</section>
-
-
-<section id="section7">
-    <div class="centeredSection">
-        <h4>CHANGE</h4>
-        <p>Add options - input boxes, searcher</p>
-    </div>
-</section>
-
-<section id="section8">
-    <div class="centeredSection">
-        <h4>WIEW ALL</h4>
-        <table>
-            <tr>
-                <th>no.</th>
-                <th>Artifact name</th>
-                <th>Owner Info</th>
-                <th>Mark</th>
-            </tr>
-            <tr>
-                <td>1.</td>
-                <td>another Artifact</td>
-                <td>another info</td>
-                <td><input type="checkbox"></td>
-            </tr>
-            <tr>
-                <td>2.</td>
-                <td>another Artifact</td>
-                <td>another info</td>
-                <td><input type="checkbox"></td>
-            </tr>
-            <tr>
-                <td>3.</td>
-                <td>another Artifact</td>
-                <td>another info</td>
-                <td><input type="checkbox"></td>
-            </tr>
-            <tr>
-                <td>4.</td>
-                <td>another Artifact</td>
-                <td>another info</td>
-                <td><input type="checkbox"></td>
-            </tr>
-            <tr>
-                <td>5.</td>
-                <td>another Artifact</td>
-                <td>another info</td>
-                <td><input type="checkbox"></td>
-            </tr>
-        </table>
-        <p>Add options - input boxes</p>
-    </div>
-
-</section>
-
-<section id="section9">
-    <div class="centeredSection">
-        <h4>FIND</h4>
-        <p>Add options - input boxes, searcher</p>
-    </div>
-</section>
 
 
 
