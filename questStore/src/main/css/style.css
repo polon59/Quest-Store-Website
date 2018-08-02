@@ -36,7 +36,7 @@ margin: 10px;
 color: white;
 font-family: "Asap";
 }
-}
+
 .asapDark {
 color: gray;
 font-family: "Asap";
@@ -101,6 +101,8 @@ li.navOpt a:hover {
     width: 150px;
     height: 120%;
     text-align: center;
+
+   
 }
 
 .galleryElement:hover {
