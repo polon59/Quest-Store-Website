@@ -4,27 +4,33 @@
 <head>
 <title>Quest Store Mentor</title>
 <link rel="stylesheet" href="../../css/style.css">
+
 </head>
 
 <body>
+    <div class="navbar color1">
+        <ul class="navlist">
+        <li class="navOpt"><a class="asapWhite" href="indexMentor.html">HOME</a></li>
+        <li class="navOpt"><a class="asapWhite" href="profileMentor.html">MY ACCOUNT</a></li>
+        </ul>
+    </div>
+
 <header>  
     <div class="Hello">
-        <img>
+        <img class="helloImg" src="../../images/common/hello.png" alt="Hello ikon">
     </div>
     <div class="Hello">
         <p>Hello :)</p>
     </div>
+
+    <script src="../../script/manager/validateInput.js"></script>
+    <script src="../../script/mentor/toggle.js"></script>
 </header>
 
-<div class="navbar">
-    <ul class="navlist">
-    <li class="navOpt"><a href="indexMentor.html">HOME</a></li>
-    <li class="navOpt"><a href="accountMentor.html">MY ACCOUNT</a></li>
-    </ul>
-</div>
+
 
 <section>
-    <div class="mainOptions">
+    <div class="mainOptions asapDark">
         <div class="gallery">
                 <a target="_blank" href="questsMentor.html">
                     <img src="../../images/mentor/mentor_questIkon.png" alt="">
@@ -40,23 +46,26 @@
         </div>
             
         <div class="gallery">
-                <a target="_blank" href="link.html">
+                <!-- <a target="_blank" href="link.html">
                     <img src="../../images/mentor/mentor_toGradeIkon1.png" alt="">
-                </a>
+                </a> -->
+                <button onclick="toggleToGrade()"><img src="../../images/mentor/mentor_toGradeIkon1.png"></button>
                 <h5>TO GRADE</h5>
         </div>
             
         <div class="gallery">
-                <a target="_blank" href="link.html">
+                <!-- <a target="_blank" href="link.html">
                     <img src="../../images/mentor/mentor_toDoIkon1.png" alt="">
-                </a>
+                </a> -->
+                <button onclick="toggleToDo()"><img src="../../images/mentor/mentor_toDoIkon1.png"></button>
                 <h5>TO DO</h5>
         </div>
 
         <div class="gallery">
-                <a target="_blank" href="link.html">
+                <!-- <a target="_blank" href="link.html">
                     <img src="../../images/mentor/mentor_classIkon.png" alt="">
-                </a>
+                </a> -->
+                <button onclick="toggleClass()"><img src="../../images/mentor/mentor_classIkon.png"></button>                
                 <h5>CLASS</h5>
         </div>
     </div>
@@ -64,7 +73,7 @@
 
 
 
-<section id="section3">
+<section id="gradeSection" style="display:none">
         <div class="centeredSection">
             <hr>
             <h4>TO GRADE</h4>
@@ -114,10 +123,10 @@
     </section>
 
 
-<section id="section4">
+<section id="classSection" style="display:none">
     <div class="centeredSection">
         <hr>
-        <h4>TO GRADE</h4>
+        <h4>CLASS</h4>
         <hr>
         <table>
             <tr>
@@ -138,24 +147,6 @@
                 <td>another info</td>
                 <td><input type="checkbox"></td>
             </tr>
-            <tr>
-                <td>3.</td>
-                <td>another task</td>
-                <td>another info</td>
-                <td><input type="checkbox"></td>
-            </tr>
-            <tr>
-                <td>4.</td>
-                <td>another task</td>
-                <td>another info</td>
-                <td><input type="checkbox"></td>
-            </tr>
-            <tr>
-                <td>5.</td>
-                <td>another task</td>
-                <td>another info</td>
-                <td><input type="checkbox"></td>
-            </tr>
         </table>
         <br>
         <button type="submit" id="send" style="float:left">SAVE CHANGES</button>
@@ -164,8 +155,8 @@
 </section>
 
 
-<section id="section5">
-    <div class="centeredSection">
+<section id="toDoSection" style="display:none">
+    <div class="centeredSection asapDark">
         <hr>
         <h4>TO DO</h4>
         <hr>
@@ -182,42 +173,6 @@
                 <td>info</td>
                 <td><input type="checkbox"></td>
             </tr>
-            <tr>
-                <td>2.</td>
-                <td>another artifact</td>
-                <td>another info</td>
-                <td><input type="checkbox"></td>
-            </tr>
-            <tr>
-                <td>3.</td>
-                <td>another artifact</td>
-                <td>another info</td>
-                <td><input type="checkbox"></td>
-            </tr>
-            <tr>
-                <td>4.</td>
-                <td>another artifact</td>
-                <td>another info</td>
-                <td><input type="checkbox"></td>
-            </tr>
-            <tr>
-                <td>5.</td>
-                <td>another artifact</td>
-                <td>another info</td>
-                <td><input type="checkbox"></td>
-            </tr>
-            <tr>
-                <td>5.</td>
-                <td>another artifact</td>
-                <td>another info</td>
-                <td><input type="checkbox"></td>
-            </tr>
-            <tr>
-                <td>5.</td>
-                <td>another artifact</td>
-                <td>another info</td>
-                <td><input type="checkbox"></td>
-            </tr>
         </table>
         <br>
         <button type="submit" id="send" style="float:left">SAVE CHANGES</button>
@@ -227,7 +182,7 @@
 
 
 
-<footer><br> something should show up :)</footer>
+<footer class="asapWhite color2">So something should show up :)</footer>
 
 </body>
 </html>

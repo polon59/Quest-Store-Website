@@ -45,7 +45,6 @@ color: white;
 font-family: "Asap";
 }
 
-
 .asapDark {
 color: gray;
 font-family: "Asap";
@@ -150,6 +149,8 @@ li.navOpt a:hover {
     width: 150px;
     height: 120%;
     text-align: center;
+
+   
 }
 
 .galleryElement:hover {
@@ -191,10 +192,35 @@ td{
 }
 
 footer{
+    position: absolute;
+    height: 50px;
     display: inline-block;
     text-align: center;
     width: 100%;
     background-color: rgb(163, 155, 155);
     margin: 0px;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
 }
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body{
+    margin-bottom: 50px;
+}
+
+
+
+.profileTable{
+    float: left;
+}
+
+.profilePhoto{
+    clear: right;
+}
+
 
