@@ -25,7 +25,7 @@
         <div class="mainOptions asapDark"> 
             <div class="gallery">
                 <h5>VIEW ALL</h5>
-                <button class="buttonIkon" onclick="toggleViewAllGroupsSection()"><img class="smallIkon" src="../../images/student/student_viewAllButton.png" alt=""></button>
+                <button class="buttonIkon" onclick="toggleViewAllGroups()"><img class="smallIkon" src="../../images/student/student_viewAllButton.png" alt=""></button>
             </div>
                 
             <div class="gallery">
@@ -42,9 +42,9 @@
 </section>
 
 <section id="viewAllGroupsSection" style="display:none">
-        <div class="centeredSection">
+        <div class="centeredSection asapDark">
             <hr>
-            <h4>TO GRADE</h4>
+            <h4>GROUPS</h4>
             <hr>
             <table>
                 <tr>
@@ -67,9 +67,9 @@
 </section>
 
     <section id="viewMyGroupsSection" style="display:none">
-        <div class="centeredSection">
+        <div class="centeredSection asapDark">
             <hr>
-            <h4>TO GRADE</h4>
+            <h4>MY GROUPS</h4>
             <hr>
             <table>
                 <tr>
@@ -92,7 +92,7 @@
     </section>
 
 <section id="createGroupSection" style="display:none">
-    <form id="createGroup" action="" method="post" > <!--TODO: action-->
+    <form class="centeredSection asapDark" id="createGroup" action="" method="post" > <!--TODO: action-->
         <label for="groupName">ENTER GROUP NAME</label><br>
         <input type="text" name="groupInput" id="group-name" onkeyup=""><br>
         <div class="error" id="groupname-error" style="display: none">Enter class name</div>
