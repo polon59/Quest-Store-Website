@@ -7,39 +7,37 @@
 </head>
 
 <body>
-<header id="siteTitle"><strong>INDEX MANAGER</strong></header>
-<header>
-    <script src="../../script/manager/validateInput.js"></script>
-    <script src="../../script/manager/toggle.js"></script>
-    <div class="Hello">
-        <img>
-    </div>
-    <div class="Hello">
-        <p>Hello :)</p>
-    </div>
-</header>
 
-<div class="navbar">
+<div class="navbar color3">
     <ul class="navlist">
-    <li class="navOpt"><a href="indexManager.html">HOME</a></li>
-    <li class="navOpt"><a href="accountManager.html">MY ACCOUNT</a></li>
+    <li class="navOpt"><a class="asapWhite" href="indexManager.html">HOME</a></li>
+    <li class="navOpt"><a class="asapWhite" href="accountManager.html">MY ACCOUNT</a></li>
     </ul>
 </div>
 
+<header class="Hello">
+    <script src="../../script/manager/validateInput.js"></script>
+    <script src="../../script/manager/toggle.js"></script>
+    <div class="Hello">
+        <img class="helloImg" src="../../images/common/hello.png" alt="Hello ikon">
+    </div>
+</header>
+
+
 <section>
-    <div class="mainOptions">
+    <div class="mainOptions asapDark">
         <div class="gallery">
                 <a target="_blank" href="questsMentor.html">
                     <img src="../../images/mentor/mentor_questIkon.png" alt="">
                 </a>
-                <h5>QUESTS (L)</h5>
+                <h5>QUESTS</h5>
         </div>
             
         <div class="gallery">
                 <a target="_blank" href="artifactsMentor.html">
                     <img src="../../images/mentor/mentor_artifactIkon.png" alt="">
                 </a>
-                <h5>ARTIFACTS (L)</h5>
+                <h5>ARTIFACTS</h5>
         </div>
             
         <div class="gallery">
@@ -50,7 +48,8 @@
         </div>
         <div class="gallery">
 
-            <button onclick="toggleClassCreation()"><img src="../../images/manager/manager_classIkon.png"></button>
+            <button class="buttonIkon" onclick="toggleClassCreation()"><img src="../../images/manager/manager_classIkon.png"></button>
+	    <h5>CLASS</h5>	    
 
             <section id="createClassSection" style="display:none">
             <form id="createClass" action="" method="post" onsubmit="return toggleClassSubmitability()"> <!--TODO: action-->
@@ -63,7 +62,8 @@
 </section>
 </div>
         <div class="gallery">
-<button onclick="toggleLevelCreation()"><img src="../../images/manager/manager_levelIkon.png"></button>
+<button class="buttonIkon" onclick="toggleLevelCreation()"><img src="../../images/manager/manager_levelIkon.png"></button>
+<h5>LEVEL</h5>
 
 <section id="createLevelSection" style="display:none">
         <form id="createLevel" action="" method="post" onsubmit="return toggleLevelSubmitability()"> <!--TODO: action-->
@@ -85,7 +85,7 @@
 </section>
 <br><br>
 
-<footer>So something should show up :)</footer>
+<footer class="asapWhite color4">So something should show up :)</footer>
 
 </body>
 </html>
