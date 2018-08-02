@@ -27,8 +27,8 @@ background-color: rgb(146, 199, 62);
 background-color: rgb(146, 199, 62);
 }
 
-.Hello 
-{display: flex;
+.Hello {
+display: flex;
 flex-flow: row wrap;
 justify-content: center;
 }
@@ -221,6 +221,49 @@ body{
 
 .profilePhoto{
     clear: right;
+}
+
+
+.LogBox{
+    text-align: center;
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    z-index: 15;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -150px;
+    background-color: rgba(255, 255, 255, 0.815);
+    box-shadow:  0 0 30px 15px rgb(102, 95, 95);
+    -moz-box-shadow: 0 0 30px  15px rgb(102, 95, 95);
+    -webkit-box-shadow: 0 0 30px 15px rgb(102, 95, 95);
+    -o-box-shadow: 0 0 30px 15px rgb(102, 95, 95);
+    
+}
+
+#bodyLogPage{
+    background-color: rgb(255, 255, 255);
+    background-image: url("../images/common/background.png");
+    font-family: "Asap";
+    color: gray;
+}
+
+
+.loginInput{
+    text-align: center;
+    box-shadow: 20px 20px 50px 10px rgba(194, 193, 193, 0.486);
+    /* -webkit-border-radius: 50px;
+    -moz-border-radius: 50px; */
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+
+}
+
+.logButton{
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    font-family: "Asap";
+    color: rgb(29, 26, 26);
 }
 
 
