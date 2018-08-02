@@ -149,8 +149,6 @@ li.navOpt a:hover {
     width: 150px;
     height: 120%;
     text-align: center;
-
-   
 }
 
 .galleryElement:hover {
@@ -251,8 +249,6 @@ body{
 .loginInput{
     text-align: center;
     box-shadow: 20px 20px 50px 10px rgba(194, 193, 193, 0.486);
-    /* -webkit-border-radius: 50px;
-    -moz-border-radius: 50px; */
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
 
