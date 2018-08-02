@@ -12,11 +12,19 @@ background-color: rgb(179, 204, 230);
 }
 
 .color3 {
-background-color: rgb(255, 51, 51);
+background-color: rgb(233, 18, 18);
 }
 
 .color4 {
-background-color: rgb(255, 153, 153);
+background-color: rgb(243, 55, 55);
+}
+
+.color1group {
+background-color: rgb(146, 199, 62);
+}
+
+.color2group {
+background-color: rgb(146, 199, 62);
 }
 
 .Hello 
@@ -36,15 +44,56 @@ margin: 10px;
 color: white;
 font-family: "Asap";
 }
-}
+
+
 .asapDark {
 color: gray;
 font-family: "Asap";
 }
 
+.asapBig {
+font-family: "Asap";
+font-size: 120px;
+}
+
+.asapBigGroup {
+color: rgb(88, 194, 2);
+font-family: "Asap";
+font-size: 120px;
+}
+
 .level {
 display: flex;
 flex-flow: column;
+}
+
+.artifact {
+display: flex;
+flex-flow: row wrap;
+justify-content: space-around;
+}
+
+.artifactList {
+    padding: 10%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.artifactElement {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.artIkon{
+    height: 250px;
+}
+
+.smallIkon {
+    height 150px;
 }
 
 a{
