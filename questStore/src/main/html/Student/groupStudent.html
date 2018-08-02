@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+
+<head>
+<title>Artifacts Student</title>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+
+<div class="navbar color1">
+    <ul class="navlist">
+    <li class="navOpt"><a class="asapWhite" href="indexStudent.html">HOME</a></li>
+    <li class="navOpt"><a class="asapWhite" href="accountStudent.html">MY ACCOUNT</a></li>
+    <li class="navOpt"><a class="asapWhite" href="walletStudent.html">MY WALLET</a></li>
+    </ul>
+</div>
+<header class="artifact">
+    <img class="artIkon" src="../../images/common/groups.png" alt="A group ikon.">
+</header>
+
+
+<section>
+        <div class="mainOptions asapDark"> 
+            <div class="gallery">
+                <h5>VIEW ALL</h5>
+                <button class="buttonIkon" onclick=""><img class="smallIkon" src="../../images/student/student_viewAllButton.png" alt=""></button>
+            </div>
+                
+            <div class="gallery">
+                <h5>MY GROUPS</h5>
+                <button class="buttonIkon" onclick=""><img src="../../images/student/student_myGroupsButton.png" alt=""></button>
+            </div>
+                
+            <div class="gallery">
+                <h5>CREATE NEW</h5>
+                <button class="buttonIkon" onclick=""><img src="../../images/student/student_createNewGroupButton.png" alt=""></button>
+            </div>
+
+        </div>
+</section>
+
+<section id="viewAllGroupsSection" style="display:none">
+        <div class="centeredSection">
+            <hr>
+            <h4>TO GRADE</h4>
+            <hr>
+            <table>
+                <tr>
+                    <th>no.</th>
+                    <th>GroupName</th>
+                    <th>Group leader</th>
+                </tr>
+                <tr>
+                    <td>1.</td>
+                    <td>cypisy</td>
+                    <td>hehesz</td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td>RadioHead</td>
+                    <td>Ten Drugi</td>
+                </tr>
+            </table>
+        </div>
+</section>
+
+    <section id="viewMyGroupsSection" style="display:none">
+        <div class="centeredSection">
+            <hr>
+            <h4>TO GRADE</h4>
+            <hr>
+            <table>
+                <tr>
+                    <th>no.</th>
+                    <th>GroupName</th>
+                    <th>Group leader</th>
+                </tr>
+                <tr>
+                    <td>1.</td>
+                    <td>myOhMy</td>
+                    <td>me</td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td>myOhMy2</td>
+                    <td>me</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+<section id="createGroupSection" style="display:none">
+    <form id="createGroup" action="" method="post" > <!--TODO: action-->
+        <label for="groupName">ENTER GROUP NAME</label><br>
+        <input type="text" name="groupInput" id="group-name" onkeyup=""><br>
+        <div class="error" id="groupname-error" style="display: none">Enter class name</div>
+        <button type="submit" id="submitGroup" style="float:left" disabled>SUBMIT</button>
+    </form>
+</section>
+
+<footer class="asapWhite color2"><br> something should show up :)</footer>
+
+</body>
+</html>
