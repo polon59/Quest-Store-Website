@@ -214,6 +214,7 @@ body{
 
 .profileTable{
     float: left;
+    text-align: left;
 }
 
 .profilePhoto{
@@ -260,5 +261,4 @@ body{
     font-family: "Asap";
     color: rgb(29, 26, 26);
 }
-
 
