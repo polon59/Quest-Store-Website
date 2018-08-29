@@ -6,6 +6,7 @@ public class TestMain {
 
     UserDAO userDAO;
     ManagerDAO managerDAO;
+    MentorDAO mentorDAO;
 
 
     public static void main(String[] args) {
@@ -20,13 +21,15 @@ public class TestMain {
 
         userDAO = factoryDAO.getUserDAO();
         managerDAO = factoryDAO.getManagerDAO();
+        mentorDAO = factoryDAO.getMentorDAO();
 
         testManagerDAO();
         testUserDAO();
+        testMentorDAO();
     }
 
     private void testUserDAO(){
-
+        System.out.println("==========================");
         // test email set
         userDAO.setEmail("new email", 3);
         System.out.println("\n");
@@ -72,11 +75,17 @@ public class TestMain {
     }
 
     private void testMentorDAO(){
-        
+        // test finding mentor by userID
+        System.out.println("==========================");
+        System.out.println("test finding mentor by userID");
+        int mentorID = mentorDAO.getIdMentor(11);
+        System.out.println(mentorID);
+        System.out.println("\n");
     }
 
     private void testManagerDAO(){
         // test finding managerID by userID
+        System.out.println("==========================");
         System.out.println("test finding managerID by userID");
         int managerID = managerDAO.getIdManager(5);
         System.out.println(managerID);
