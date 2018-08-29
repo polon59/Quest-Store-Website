@@ -9,8 +9,10 @@ public class FactoryDAO {
     DBConnection dbConnection;
     Connection connection;
     CommonDAO commonDAO;
+
     UserDAO userDAO;
     ManagerDAO managerDAO;
+    MentorDAO mentorDAO;
     
 
 
@@ -18,8 +20,10 @@ public class FactoryDAO {
         dbConnection = new DBConnection();
         commonDAO = new CommonDAO();
         createConnection();
+
         userDAO = new UserDAO(connection, commonDAO);
         managerDAO = new ManagerDAO(connection, commonDAO);
+        mentorDAO = new MentorDAO(connection, commonDAO);
     }
 
 
@@ -35,5 +39,10 @@ public class FactoryDAO {
 
     public ManagerDAO getManagerDAO() {
         return this.managerDAO;
+    }
+
+
+    public ManagerDAO getMentorDAO() {
+        return this.mentorDAO;
     }
 }
