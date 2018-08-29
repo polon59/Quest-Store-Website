@@ -126,4 +126,9 @@ public class UserDAO {
         return email;
     }
 
+    public String getPhone(int userID){
+        User foundUser = findUserById(userID);
+        String phone = foundUser.getPhone();
+        return phone;
+    }
 }
