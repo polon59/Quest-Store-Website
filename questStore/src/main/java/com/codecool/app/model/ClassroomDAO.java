@@ -28,6 +28,52 @@ public class ClassroomDAO {
     }
 
 
+    public Classroom findClassroom(String name){
+        String findClassroom = "SELECT * FROM class_ WHERE name=?;";
+        int idClassroom = Integer.MAX_VALUE;
+        Classroom classroom = null;
+
+        try {
+            PreparedStatement ps = connection.prepareStatement(findClassroom);
+            ps.setString(1, name);
+            ResultSet result = commonDAO.getData(connection, ps);
+
+            while (result.next()) {
+                idClassroom = result.getInt("id_class");
+            }
+            classroom = new Classroom(name, idClassroom);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return classroom;
+    }
+
+
+    public Classroom findClassroom(int idClassroom){
+        String findClassroom = "SELECT * FROM class_ WHERE id_class=?;";
+        String name = "";
+        Classroom classroom = null;
+
+        try {
+            PreparedStatement ps = connection.prepareStatement(findClassroom);
+            ps.setInt(1, idClassroom);
+            ResultSet result = commonDAO.getData(connection, ps);
+
+            while (result.next()) {
+                name = result.getString("name");
+            }
+            classroom = new Classroom(name, idClassroom);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return classroom;
+    }
+
+
     public String getName(int classroomId){
         String findIdByClassName = "SELECT name FROM class_ WHERE id_class=?;";
         String name = "";
@@ -71,26 +117,4 @@ public class ClassroomDAO {
         return classroomsList;
     }
 
-    public Classroom findClassroom(String name){
-        String findClassroom = "SELECT * FROM class_ WHERE name=?;";
-        int idClassroom = Integer.MAX_VALUE;
-        Classroom classroom = null;
-
-        try {
-            PreparedStatement ps = connection.prepareStatement(findClassroom);
-            ps.setString(1, name);
-            ResultSet result = commonDAO.getData(connection, ps);
-
-            while (result.next()) {
-                idClassroom = result.getInt("id_class");
-            }
-            classroom = new Classroom(name, idClassroom);
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return classroom;
-        
-    }
 }
