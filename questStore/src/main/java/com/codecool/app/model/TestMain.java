@@ -87,10 +87,21 @@ public class TestMain {
         // test finding mentor classes by mentorID
         System.out.println("test finding mentor classes by mentorID");
         List<Classroom> classroomList = mentorDAO.getMentorClassrooms(1);
-
         for (Classroom classroom : classroomList) {
             System.out.println(classroom.toString());
         }
+        System.out.println("\n");
+
+        // test setting mentor classroom
+        System.out.println("test setting mentor classroom");
+        List<Integer> idsClassroom = new ArrayList<>();
+        idsClassroom.add(1);
+        idsClassroom.add(2);
+        idsClassroom.add(3);
+        int idMentor = 2;
+        mentorDAO.setMentorClassroom(idsClassroom, idMentor);
+        System.out.println("mentor classes set successfully");
+        System.out.println("\n");
     }
 
     private void testManagerDAO(){
