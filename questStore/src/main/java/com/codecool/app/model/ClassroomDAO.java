@@ -58,4 +58,28 @@ public class ClassroomDAO {
         return name;
     }
 
+    public List<Classroom> getListOfAll(){
+        String getAllClassrooms = "SELECT * FROM class_";
+        List<Classroom> classroomsList = new ArrayList<>();
+        String name;
+        int idClassroom;
+
+        try {
+            PreparedStatement ps = connection.prepareStatement(getAllClassrooms);
+            ResultSet result = commonDAO.getData(connection, ps);
+
+            while (result.next()) {
+                idClassroom = result.getInt("id_class");
+                name = result.getString("name");
+                Classroom classroom = new Classroom(name, idClassroom);
+                classroomsList.add(classroom);
+            }
+            
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return classroomsList;
+    }
+
 }
