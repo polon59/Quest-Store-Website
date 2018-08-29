@@ -160,6 +160,12 @@ public class TestMain {
          System.out.println(classroomDAO.findClassroom(1).toString());
          System.out.println("\n");
 
+        // test insert new classroom
+        Classroom classToAdd = new Classroom("new classroom", 44);
+        System.out.println("OLD ID = "+ classToAdd.getIDClassroom());
+        classroomDAO.insertNewClassroom(classToAdd);
+        System.out.println("NEW ID = "+ classToAdd.getIDClassroom());
+
     }
 
 }
