@@ -9,6 +9,7 @@ public class TestMain {
     UserDAO userDAO;
     ManagerDAO managerDAO;
     MentorDAO mentorDAO;
+    ClassroomDAO classroomDAO;
 
 
     public static void main(String[] args) {
@@ -24,10 +25,12 @@ public class TestMain {
         userDAO = factoryDAO.getUserDAO();
         managerDAO = factoryDAO.getManagerDAO();
         mentorDAO = factoryDAO.getMentorDAO();
+        classroomDAO = factoryDAO.getClassroomDAO();
 
         // testManagerDAO();
         // testUserDAO();
         // testMentorDAO();
+        testClassroomDAO();
     }
 
     private void testUserDAO(){
@@ -104,6 +107,7 @@ public class TestMain {
         System.out.println("\n");
     }
 
+
     private void testManagerDAO(){
         // test finding managerID by userID
         System.out.println("==========================");
@@ -112,6 +116,18 @@ public class TestMain {
         System.out.println(managerID);
         System.out.println("\n");
         
+    }
+
+
+    private void testClassroomDAO(){
+        // test finding classroom id by classroom name
+        System.out.println("==========================");
+        System.out.println("test finding classroom id by classroom name");
+        int classroomId;
+        String classroomName = "web room";
+        classroomId = classroomDAO.getIdClassroom(classroomName);
+        System.out.println(classroomId);
+        System.out.println("\n");
     }
 
 }
