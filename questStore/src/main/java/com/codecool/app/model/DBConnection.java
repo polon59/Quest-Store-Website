@@ -1,3 +1,4 @@
+package com.codecool.app.model;
 /**
  * DBConnection
  */
