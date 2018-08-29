@@ -63,6 +63,22 @@ public class MentorDAO {
         return mentorClassrooms;
         
     }
+
+
+    public void setMentorClassroom(List<Integer> idsClassroom, int idMentor){
+        String setClasses = "INSERT INTO mentor_class (id_mentor, id_class) VALUES (?,?);";
+        try {
+            for (Integer idClassroom : idsClassroom) {
+                PreparedStatement ps = connection.prepareStatement(setClasses);
+                ps.setInt(1, idMentor);
+                ps.setInt(2, idClassroom);
+                commonDAO.updateData(connection, ps);
+            }
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
     
 
 }
