@@ -106,4 +106,25 @@ public class ClassroomDAO {
         }
         return classroomsList;
     }
+
+
+    public void insertNewClassroom(Classroom classroom){
+        // check what to do with Classroom id
+
+        String name = classroom.getName();
+        int classroomId;
+
+        String insertClass = "INSERT INTO class_ (name) VALUES (?);";
+        try {   
+            PreparedStatement ps = connection.prepareStatement(insertClass);
+            ps.setString(1, name);
+            commonDAO.updateData(connection, ps);
+
+            classroomId = getIdClassroom(name);
+            classroom.setNewId(classroomId);
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
