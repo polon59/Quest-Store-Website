@@ -180,5 +180,14 @@ public class TestMain {
         int groupId = groupDAO.getIdGroup(name);
         System.out.println(groupId);
         System.out.println("\n");
+
+
+        // test finding group name by group id
+        System.out.println("==========================");
+        System.out.println("test finding group name by group id");
+        int groupID = 2;
+        String groupName = groupDAO.getGroupName(groupId);
+        System.out.println(groupName);
+        System.out.println("\n");
     }
 }
