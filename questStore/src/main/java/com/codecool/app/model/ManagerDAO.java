@@ -17,4 +17,24 @@ public class ManagerDAO {
         this.commonDAO = commonDAO;
     }
     
+
+    public int getIdManager(int userId){
+        String findByUserId = "SELECT id_manager FROM manager WHERE id_sustemUser=?;";
+        int idManager = Integer.MAX_VALUE;
+
+        try {
+            PreparedStatement ps = connection.prepareStatement(findByUserId);
+            ps.setInt(1, userId);
+            ResultSet result = commonDAO.getData(connection, ps);
+
+            while (result.next()) {
+                idManager = result.getInt("id_manager");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return idManager;
+    }
+    
 }
