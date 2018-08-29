@@ -6,15 +6,21 @@ import java.sql.DriverManager;
 
 public class FactoryDAO {
 
-    Connection connection;
     DBConnection dbConnection;
+    Connection connection;
+    CommonDAO commonDAO;
     UserDAO userDAO;
+    ManagerDAO managerDAO;
+    
 
 
     public FactoryDAO(){
         dbConnection = new DBConnection();
+        commonDAO = new CommonDAO();
         createConnection();
-        userDAO = new UserDAO(connection);
+        userDAO = new UserDAO(connection, commonDAO);
+        managerDAO = new ManagerDAO(connection, commonDAO);
+        
     }
 
 
@@ -25,5 +31,9 @@ public class FactoryDAO {
 
     public UserDAO getUserDAO(){
         return this.userDAO;
+    }
+
+    public ManagerDAO getManagerDAO() {
+        return this.managerDAO;
     }
 }
