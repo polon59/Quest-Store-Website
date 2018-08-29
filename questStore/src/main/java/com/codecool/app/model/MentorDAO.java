@@ -41,8 +41,8 @@ public class MentorDAO {
     public List<Classroom> getMentorClassrooms(int idMentor){
         List<Classroom> mentorClassrooms = new ArrayList<>();
         String findClassByMentor = "SELECT * FROM mentor_class JOIN class_ ON class_.id_class = mentor_class.id_class WHERE id_mentor = ?;";
-        private String classroomName;
-        private int idClassroom;
+        String classroomName;
+        int idClassroom;
         
         try {
             PreparedStatement ps = connection.prepareStatement(findClassByMentor);
