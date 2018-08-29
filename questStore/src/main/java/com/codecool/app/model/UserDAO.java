@@ -13,9 +13,9 @@ public class UserDAO {
     CommonDAO commonDAO;
 
 
-    public UserDAO(Connection connection){
+    public UserDAO(Connection connection, CommonDAO commonDAO){
         this.connection = connection;
-        this.commonDAO = new CommonDAO();
+        this.commonDAO = commonDAO;
     }
 
     public void setEmail(String newEmail, int id_systemuser){

@@ -4,11 +4,25 @@ import java.sql.SQLException;
 
 public class TestMain {
 
+    UserDAO userDAO;
+    ManagerDAO managerDAO;
 
 
     public static void main(String[] args) {
+        
+        TestMain test = new TestMain();
+        test.testAllDAO();
+
+    }
+
+    private void testAllDAO(){
         FactoryDAO factoryDAO = new FactoryDAO();
-        UserDAO userDAO = factoryDAO.getUserDAO();
+
+        userDAO = factoryDAO.getUserDAO();
+        managerDAO = factoryDAO.getManagerDAO();
+    }
+
+    private void testUserDAO(){
 
         // test email set
         userDAO.setEmail("new email", 3);
@@ -46,6 +60,14 @@ public class TestMain {
         System.out.println("test finding user's phone");
         String phone = userDAO.getPhone(3);
         System.out.println(phone);
+    }
+
+    private void testMentorDAO(){
+
+    }
+
+    private void testManagerDAO(){
+        
     }
 
 }
