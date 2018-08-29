@@ -20,7 +20,7 @@ public class ClassroomDAO {
 
 
     public int getIdClassroom(String classroomName){
-        String findIdByClassName = "SELECT id_class FROM class_ WHERE name=?;";
+        // String findIdByClassName = "SELECT id_class FROM class_ WHERE name=?;";
         Classroom foundClassroom = findClassroom(classroomName);
         int classroomID = foundClassroom.getIDClassroom();
 
