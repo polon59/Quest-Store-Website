@@ -1,23 +1,28 @@
 
-public class User {
+import java.util.List;
+import java.util.ArrayList;
+
+public class Mentor extends User {
 
     private int id;
     private String name;
     private String surname;
     private String email;
     private String phone;
-    // private UserDAO userDao;
-
-    public User(int id, String name, String surname, String email, String phone){
+    private String password;
+    //private List<Classroom> classrooms;
+    
+    public Mentor(int id, String name, String surname, String email, String phone, String password){
+        super(id, name, surname, email, phone,password);
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.phone = phone;
-        // this.userDao = userDao;
+        this.password = password;
     }
 
-    public int getUserID(){
+    public int getId() {
         return id;
     }
 
@@ -37,6 +42,10 @@ public class User {
         return phone;
     }
 
+    public String getPassword(){
+        return password;
+    }
+
     public void setName(String name){
         this.name = name;
     }
@@ -45,12 +54,12 @@ public class User {
         this.surname = surname;
     }
 
-    public void setPhone(String phone){
-        this.phone = phone;
+    public void setEmail(String email){
+        this.email = email;
     }
-    
-    public String toString(){
-        return id + " " + name + " " + surname + " " + email + " " + phone + "\n";
+
+    public void setPassword(String password){
+        this.password = password;
     }
 
 }
