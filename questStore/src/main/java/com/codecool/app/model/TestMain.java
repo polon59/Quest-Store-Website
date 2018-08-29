@@ -10,6 +10,7 @@ public class TestMain {
     ManagerDAO managerDAO;
     MentorDAO mentorDAO;
     ClassroomDAO classroomDAO;
+    GroupDAO groupDAO;
 
 
     public static void main(String[] args) {
@@ -26,11 +27,13 @@ public class TestMain {
         managerDAO = factoryDAO.getManagerDAO();
         mentorDAO = factoryDAO.getMentorDAO();
         classroomDAO = factoryDAO.getClassroomDAO();
+        groupDAO = factoryDAO.getGroupDAO();
 
         // testManagerDAO();
         // testUserDAO();
         // testMentorDAO();
-        testClassroomDAO();
+        // testClassroomDAO();
+        testGroupDAO();
     }
 
     private void testUserDAO(){
@@ -168,4 +171,14 @@ public class TestMain {
 
     }
 
+
+    public void testGroupDAO(){
+        // test finding group id by group name
+        System.out.println("==========================");
+        System.out.println("test finding group id by group name");
+        String name = "group1";
+        int groupId = groupDAO.getIdGroup(name);
+        System.out.println(groupId);
+        System.out.println("\n");
+    }
 }
