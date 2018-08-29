@@ -42,7 +42,7 @@ public class FactoryDAO {
     }
 
 
-    public ManagerDAO getMentorDAO() {
+    public MentorDAO getMentorDAO() {
         return this.mentorDAO;
     }
 }
