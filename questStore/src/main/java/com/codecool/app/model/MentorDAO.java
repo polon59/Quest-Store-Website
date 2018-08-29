@@ -17,7 +17,7 @@ public class MentorDAO {
         this.commonDAO = commonDAO;
     }
 
-    
+
     public int getIdMentor(int userId){
         String findByUserId = "SELECT id_mentor FROM mentor WHERE id_sustemUser=?;";
         int idMentor = Integer.MAX_VALUE;
@@ -36,5 +36,33 @@ public class MentorDAO {
         }
         return idMentor;
     }
+
+
+    public List<Classroom> getMentorClassrooms(int idMentor){
+        List<Classroom> mentorClassrooms = new ArrayList<>();
+        String findClassByMentor = "SELECT * FROM mentor_class JOIN class_ ON class_.id_class = mentor_class.id_class WHERE id_mentor = ?;";
+        private String classroomName;
+        private int idClassroom;
+        
+        try {
+            PreparedStatement ps = connection.prepareStatement(findClassByMentor);
+            ps.setInt(1, idMentor);
+            ResultSet result = commonDAO.getData(connection, ps);
+
+            while (result.next()) {
+                classroomName = result.getString("name");
+                idClassroom = result.getInt("id_class");
+                Classroom classroom = new Classroom(classroomName,idClassroom);
+                mentorClassrooms.add(classroom);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return mentorClassrooms;
+        
+    }
+    
 
 }
