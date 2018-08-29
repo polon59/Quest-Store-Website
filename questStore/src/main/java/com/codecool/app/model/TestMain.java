@@ -20,54 +20,67 @@ public class TestMain {
 
         userDAO = factoryDAO.getUserDAO();
         managerDAO = factoryDAO.getManagerDAO();
+
+        testManagerDAO();
+        testUserDAO();
     }
 
     private void testUserDAO(){
 
         // test email set
         userDAO.setEmail("new email", 3);
+        System.out.println("\n");
 
         // test phone set
         userDAO.setPhone("new phone", 2);
+        System.out.println("\n");
 
         //test finding user by email
         System.out.println("test finding user by email:");
-        System.out.println(userDAO.findUserByEmail("ff").toString());
-
+        System.out.println(userDAO.findUserByEmail("jm@o2.pl").toString());
+        System.out.println("\n");        
 
         //test finding user by id
         System.out.println("test finding user by id:");
-        User foundUser =  userDAO.findUserById(3);
+        User foundUser =  userDAO.findUserById(7);
         System.out.println(foundUser.toString()); 
+        System.out.println("\n");
         
-
         //test finding user's name
         System.out.println("test finding user's name:");
-        String name = userDAO.getName(3);
+        String name = userDAO.getName(7);
         System.out.println(name);
+        System.out.println("\n");
 
         // test finding user's surname
         System.out.println("test finding user's surname");
-        String surname = userDAO.getSurname(3);
+        String surname = userDAO.getSurname(7);
         System.out.println(surname);
+        System.out.println("\n");
 
         // test finding user's email
         System.out.println("test finding user's email");
-        String email = userDAO.getEmail(3);
+        String email = userDAO.getEmail(7);
         System.out.println(email);
+        System.out.println("\n");
 
         // test finding user's phone
         System.out.println("test finding user's phone");
-        String phone = userDAO.getPhone(3);
+        String phone = userDAO.getPhone(7);
         System.out.println(phone);
+        System.out.println("\n");
     }
 
     private void testMentorDAO(){
-
+        
     }
 
     private void testManagerDAO(){
-        
+        // test finding managerID by userID
+        System.out.println("test finding managerID by userID");
+        int managerID = managerDAO.getIdManager(5);
+        System.out.println(managerID);
+        System.out.println("\n");
     }
 
 }
