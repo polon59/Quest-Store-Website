@@ -12,6 +12,7 @@ public class User {
     public User(int id, String name, String surname, String email, String phone){
         this.id = id;
         this.name = name;
+        this.surname = surname;
         this.email = email;
         this.phone = phone;
         // this.userDao = userDao;
@@ -50,7 +51,7 @@ public class User {
     }
     
     public String toString(){
-        return name + " " + surname + " " + email + " " + phone + "\n";
+        return id + " " + name + " " + surname + " " + email + " " + phone + "\n";
     }
 
 }
