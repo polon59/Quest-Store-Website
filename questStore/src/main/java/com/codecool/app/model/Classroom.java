@@ -1,43 +1,26 @@
-package com.codecool.app.model;
-
 import java.util.List;
 import java.util.ArrayList;
 
 public class Classroom{
     
     private String name;
-    private Mentor mentor;
-    private List<Mentor> mentors;
-    private List<Student> students;
+    private int idClassroom;
     
-    public Classroom(String name, Mentor mentor, List<Student> students){
+    public Classroom(String name, int idClassroom){
         this.name = name;
-        this.mentor = mentor;
-        this.students = students;
+        this.idClassroom = idClassroom;
     }
 
-    public List<Mentor> getMentors(){
-        return mentors;
+    public int getIDClassroom(){
+        return this.idClassroom;
     }
 
-    public List<Student> getStudents() {
-        return students;
+    public String getName(){
+        return this.name;
     }
 
-    public void addMentor(Mentor mentor){
-        mentors.add(mentor);
-    }
-
-    public void addStudent(Student student){
-        students.add(student);
-    }
-
-    public void removeMentor(Mentor mentor){
-        mentors.remove(mentor);
-    }
-
-    public void removeStudent(Student student){
-        students.remove(student);
+    public String toString(){
+        return name + " " + idClassroom;
     }
 
 }
