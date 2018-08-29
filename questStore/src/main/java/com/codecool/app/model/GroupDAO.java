@@ -17,7 +17,7 @@ public class GroupDAO {
         this.commonDAO = commonDAO;
     }
 
-    
+
     public int getIdGroup(String name){
         String findIdGroup = "SELECT id_team FROM team WHERE name=?;";
         int id = Integer.MAX_VALUE;
@@ -36,6 +36,27 @@ public class GroupDAO {
         }
 
         return id;
+    }
+
+
+    public String getGroupName(int id){
+        String findNameGroup = "SELECT name FROM team WHERE id_team=?;";
+        String name = "";
+
+        try {
+            PreparedStatement ps = connection.prepareStatement(findNameGroup);
+            ps.setInt(1, id);
+            ResultSet result = commonDAO.getData(connection, ps);
+
+            while (result.next()) {
+                name = result.getString("name");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return name;
     }
 
 }
