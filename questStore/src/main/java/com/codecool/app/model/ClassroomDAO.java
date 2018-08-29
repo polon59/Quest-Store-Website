@@ -38,4 +38,24 @@ public class ClassroomDAO {
         return classroomID;
     }
 
+
+    public String getName(int classroomId){
+        String findIdByClassName = "SELECT name FROM class_ WHERE id_class=?;";
+        String name = "";
+
+        try {
+            PreparedStatement ps = connection.prepareStatement(findIdByClassName);
+            ps.setInt(1, classroomId);
+            ResultSet result = commonDAO.getData(connection, ps);
+
+            while (result.next()) {
+                name = result.getString("name");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return name;
+    }
+
 }
