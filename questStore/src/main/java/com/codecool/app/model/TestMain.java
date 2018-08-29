@@ -1,6 +1,8 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TestMain {
 
@@ -81,6 +83,14 @@ public class TestMain {
         int mentorID = mentorDAO.getIdMentor(11);
         System.out.println(mentorID);
         System.out.println("\n");
+
+        // test finding mentor classes by mentorID
+        System.out.println("test finding mentor classes by mentorID");
+        List<Classroom> classroomList = mentorDAO.getMentorClassrooms(1);
+
+        for (Classroom classroom : classroomList) {
+            System.out.println(classroom.toString());
+        }
     }
 
     private void testManagerDAO(){
@@ -90,6 +100,7 @@ public class TestMain {
         int managerID = managerDAO.getIdManager(5);
         System.out.println(managerID);
         System.out.println("\n");
+        
     }
 
 }
