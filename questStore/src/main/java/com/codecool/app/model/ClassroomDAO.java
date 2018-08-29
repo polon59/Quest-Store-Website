@@ -51,6 +51,15 @@ public class ClassroomDAO {
     }
 
 
+    public String getName(int classroomId){
+        String findIdByClassName = "SELECT name FROM class_ WHERE id_class=?;";
+        Classroom foundClassroom = findClassroom(classroomId);
+        String name = foundClassroom.getName();
+
+        return name;
+    }
+
+
     public Classroom findClassroom(int idClassroom){
         String findClassroom = "SELECT * FROM class_ WHERE id_class=?;";
         String name = "";
@@ -73,25 +82,6 @@ public class ClassroomDAO {
         return classroom;
     }
 
-
-    public String getName(int classroomId){
-        String findIdByClassName = "SELECT name FROM class_ WHERE id_class=?;";
-        String name = "";
-
-        try {
-            PreparedStatement ps = connection.prepareStatement(findIdByClassName);
-            ps.setInt(1, classroomId);
-            ResultSet result = commonDAO.getData(connection, ps);
-
-            while (result.next()) {
-                name = result.getString("name");
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return name;
-    }
 
     public List<Classroom> getListOfAll(){
         String getAllClassrooms = "SELECT * FROM class_";
@@ -116,5 +106,4 @@ public class ClassroomDAO {
         }
         return classroomsList;
     }
-
 }
