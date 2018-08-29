@@ -13,13 +13,13 @@ public class FactoryDAO {
 
     public FactoryDAO(){
         dbConnection = new DBConnection();
-        connection = createConnection();
+        createConnection();
         userDAO = new UserDAO(connection);
     }
 
 
     private void createConnection(){
-        connection = dbConnection.getConnection();
+        this.connection = dbConnection.getConnection();
     }
 
 

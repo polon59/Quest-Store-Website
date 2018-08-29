@@ -7,9 +7,8 @@ public class TestMain {
 
 
     public static void main(String[] args) {
-        DBConnection dbConnection = new DBConnection();
-        Connection connection = dbConnection.getConnection();
-        UserDAO userDAO = new UserDAO(connection);
+        FactoryDAO factoryDAO = new FactoryDAO();
+        UserDAO userDAO = factoryDAO.getUserDAO();
 
         // test email set
         userDAO.setEmail("new email", 3);
