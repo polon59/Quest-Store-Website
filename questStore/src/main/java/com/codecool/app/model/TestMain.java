@@ -128,6 +128,16 @@ public class TestMain {
         classroomId = classroomDAO.getIdClassroom(classroomName);
         System.out.println(classroomId);
         System.out.println("\n");
+
+
+         // test finding classroom name by classroom id
+         System.out.println("==========================");
+         System.out.println("test finding classroom name by classroom id");
+         int id = 2;
+         String name;
+         name = classroomDAO.getName(id);
+         System.out.println(name);
+         System.out.println("\n");
     }
 
 }
