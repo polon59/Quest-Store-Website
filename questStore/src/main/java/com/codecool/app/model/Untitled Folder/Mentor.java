@@ -58,8 +58,8 @@ public class Mentor extends User {
         this.email = email;
     }
 
-    public void setPassword(String password){
-        this.password = password;
-    }
+    public void setPassword(String password) { this.password = password; }
+
+
 
 }

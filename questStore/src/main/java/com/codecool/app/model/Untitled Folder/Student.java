@@ -15,5 +15,70 @@ public class Student extends User{
         this.classroom = classroom;
     }
 
+    @Override
+    public int getUserID() {
+        return id;
+    }
 
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String getSurname() {
+        return surname;
+    }
+
+    @Override
+    public String getEmail() {
+        return email;
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
+    }
+
+    @Override
+    public String getPhone() {
+        return phone;
+    }
+
+    public Classroom getClassroom() {
+        return classroom;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    @Override
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    @Override
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setClassroom(Classroom classroom) {
+        this.classroom = classroom;
+    }
 }
