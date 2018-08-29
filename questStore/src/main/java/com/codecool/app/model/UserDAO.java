@@ -120,4 +120,10 @@ public class UserDAO {
         return surname;
     }
 
+    public String getEmail(int userID){
+        User foundUser = findUserById(userID);
+        String email = foundUser.getEmail();
+        return email;
+    }
+
 }
