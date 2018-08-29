@@ -18,7 +18,7 @@ public class ClassroomDAO {
         this.commonDAO = commonDAO;
     }
 
-    
+
     public int getIdClassroom(String classroomName){
         String findIdByClassName = "SELECT id_class FROM class_ WHERE name=?;";
         int classroomID = Integer.MAX_VALUE;
@@ -29,7 +29,7 @@ public class ClassroomDAO {
             ResultSet result = commonDAO.getData(connection, ps);
 
             while (result.next()) {
-                idManager = result.getInt("id_class");
+                classroomID = result.getInt("id_class");
             }
 
         } catch (SQLException e) {
