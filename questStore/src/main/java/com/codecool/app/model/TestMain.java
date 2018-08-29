@@ -154,6 +154,12 @@ public class TestMain {
          System.out.println(classroomDAO.findClassroom("python basic").toString());
          System.out.println("\n");
 
+
+         // test finding classroom by id
+         System.out.println("test finding classroom by name");
+         System.out.println(classroomDAO.findClassroom(1).toString());
+         System.out.println("\n");
+
     }
 
 }
