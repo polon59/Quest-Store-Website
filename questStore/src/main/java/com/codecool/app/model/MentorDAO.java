@@ -17,4 +17,24 @@ public class MentorDAO {
         this.commonDAO = commonDAO;
     }
 
+    
+    public int getIdMentor(int userId){
+        String findByUserId = "SELECT id_mentor FROM mentor WHERE id_sustemUser=?;";
+        int idMentor = Integer.MAX_VALUE;
+
+        try {
+            PreparedStatement ps = connection.prepareStatement(findByUserId);
+            ps.setInt(1, userId);
+            ResultSet result = commonDAO.getData(connection, ps);
+
+            while (result.next()) {
+                idMentor = result.getInt("id_mentor");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return idMentor;
+    }
+
 }
