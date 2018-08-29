@@ -21,20 +21,9 @@ public class ClassroomDAO {
 
     public int getIdClassroom(String classroomName){
         String findIdByClassName = "SELECT id_class FROM class_ WHERE name=?;";
-        int classroomID = Integer.MAX_VALUE;
+        Classroom foundClassroom = findClassroom(classroomName);
+        int classroomID = foundClassroom.getIDClassroom();
 
-        try {
-            PreparedStatement ps = connection.prepareStatement(findIdByClassName);
-            ps.setString(1, classroomName);
-            ResultSet result = commonDAO.getData(connection, ps);
-
-            while (result.next()) {
-                classroomID = result.getInt("id_class");
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
         return classroomID;
     }
 
