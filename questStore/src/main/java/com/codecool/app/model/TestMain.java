@@ -143,11 +143,17 @@ public class TestMain {
          System.out.println("test finding all classrooms");
          List<Classroom> classrooms = new ArrayList<>();
          classrooms = classroomDAO.getListOfAll();
-
          for (Classroom classroom : classrooms) {
              System.out.println(classroom.toString());
          }
          System.out.println("\n");
+
+
+         // test finding classroom by name
+         System.out.println("test finding classroom by name");
+         System.out.println(classroomDAO.findClassroom("python basic").toString());
+         System.out.println("\n");
+
     }
 
 }
