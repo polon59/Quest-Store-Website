@@ -25,9 +25,9 @@ public class TestMain {
         managerDAO = factoryDAO.getManagerDAO();
         mentorDAO = factoryDAO.getMentorDAO();
 
-        testManagerDAO();
-        testUserDAO();
-        testMentorDAO();
+        // testManagerDAO();
+        // testUserDAO();
+        // testMentorDAO();
     }
 
     private void testUserDAO(){
