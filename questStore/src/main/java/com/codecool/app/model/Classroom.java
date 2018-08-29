@@ -1,5 +1,3 @@
-package com.codecool.app.model;
-
 import java.util.List;
 import java.util.ArrayList;
 
@@ -13,12 +11,16 @@ public class Classroom{
         this.idClassroom = idClassroom;
     }
 
-    public getIDClassroom(){
+    public int getIDClassroom(){
         return this.idClassroom;
     }
 
-    public getName(){
+    public String getName(){
         return this.name;
+    }
+
+    public String toString(){
+        return name + " " + idClassroom;
     }
 
 }
