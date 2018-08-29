@@ -107,11 +107,17 @@ public class UserDAO {
         return user;
     }
 
-    
+
     public String getName(int userID){
         User foundUser = findUserById(userID);
         String name = foundUser.getName();
         return name;
+    }
+
+    public String getSurname(int userID){
+        User foundUser = findUserById(userID);
+        String surname = foundUser.getSurname();
+        return surname;
     }
 
 }
