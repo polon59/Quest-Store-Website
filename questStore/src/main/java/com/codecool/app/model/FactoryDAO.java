@@ -20,7 +20,6 @@ public class FactoryDAO {
         createConnection();
         userDAO = new UserDAO(connection, commonDAO);
         managerDAO = new ManagerDAO(connection, commonDAO);
-        
     }
 
 
@@ -32,6 +31,7 @@ public class FactoryDAO {
     public UserDAO getUserDAO(){
         return this.userDAO;
     }
+
 
     public ManagerDAO getManagerDAO() {
         return this.managerDAO;
