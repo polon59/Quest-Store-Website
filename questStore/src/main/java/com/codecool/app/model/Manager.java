@@ -1,8 +1,8 @@
-package com.codecool.app.model;
+// package com.codecool.app.model;
 
 public class Manager extends User {
 
-    private int managerId
+    private int managerId;
     private Mentor mentor;
 
     private int id;
@@ -13,7 +13,7 @@ public class Manager extends User {
     private String password;
 
 
-    @Override
+    // @Override
     public int getUserId() {
         return id;
     }
@@ -21,55 +21,54 @@ public class Manager extends User {
     public Manager(int managerId, int id, String name, String surname, String email, String phone) {
         super(id, name, surname, email, phone);
     }
-}
 
-    @Override
+    // @Override
     public String getName() {
         return name;
     }
 
-    @Override
+    // @Override
     public String getSurname() {
         return surname;
     }
 
-    @Override
+    // @Override
     public String getEmail() {
         return email;
     }
 
-    @Override
+    // @Override
     public String getPhone() {
         return phone;
     }
 
-    @Override
+    // @Override
     public String getPassword() {
         return password;
     }
 
 
-    @Override
+    // @Override
     public void setName(String name) {
         this.name = name;
     }
 
-    @Override
+    // @Override
     public void setSurname(String surname) {
         this.surname = surname;
     }
 
-    @Override
+    // @Override
     public void setEmail(String email) {
         this.email = email;
     }
 
-    @Override
+    // @Override
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    @Override
+    // @Override
     public void setPassword(String password) {
         this.password = password;
     }

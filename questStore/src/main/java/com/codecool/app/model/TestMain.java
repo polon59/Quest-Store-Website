@@ -1,4 +1,4 @@
-package com.codecool.app.model;
+// package com.codecool.app.model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
