@@ -19,7 +19,7 @@ public class ManagerDAO {
     
 
     public int getIdManager(int userId){
-        String findByUserId = "SELECT id_manager FROM manager WHERE id_sustemUser=?;";
+        String findByUserId = "SELECT id_manager FROM manager WHERE id_systemuser=?;";
         int idManager = Integer.MAX_VALUE;
 
         try {
