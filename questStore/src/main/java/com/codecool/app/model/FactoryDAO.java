@@ -15,6 +15,7 @@ public class FactoryDAO {
     MentorDAO mentorDAO;
     ClassroomDAO classroomDAO;
     GroupDAO groupDAO;
+    StudentDAO studentDAO;
     
 
 
@@ -28,6 +29,7 @@ public class FactoryDAO {
         mentorDAO = new MentorDAO(connection, commonDAO);
         classroomDAO = new ClassroomDAO(connection, commonDAO);
         groupDAO = new GroupDAO(connection, commonDAO);
+        studentDAO = new StudentDAO(connection, commonDAO);
     }
 
 
@@ -58,5 +60,9 @@ public class FactoryDAO {
 
     public GroupDAO getGroupDAO() {
         return this.groupDAO;
+    }
+
+    public StudentDAO getStudentDAO() {
+        return this.studentDAO;
     }
 }
