@@ -1,3 +1,5 @@
+package com.codecool.app.model;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
@@ -108,20 +110,14 @@ public class ClassroomDAO {
     }
 
 
-    public void insertNewClassroom(Classroom classroom){
-        // check what to do with Classroom id
+    public void insertNewClassroom(String name){
 
-        String name = classroom.getName();
-        int classroomId;
-
-        String insertClass = "INSERT INTO class_ (name) VALUES (?);";
+        String insertClass = "INSERT INTO class (name) VALUES (?);";
         try {   
             PreparedStatement ps = connection.prepareStatement(insertClass);
             ps.setString(1, name);
             commonDAO.updateData(connection, ps);
 
-            classroomId = getIdClassroom(name);
-            classroom.setNewId(classroomId);
             
         } catch (SQLException e) {
             e.printStackTrace();

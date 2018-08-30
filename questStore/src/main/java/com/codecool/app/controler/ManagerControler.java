@@ -4,8 +4,14 @@ import com.codecool.app.model.*;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.net.URI;
+import java.net.URL;
+import java.net.URLDecoder;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -29,30 +35,54 @@ public class ManagerControler implements HttpHandler {
 
     @Override
     public void handle(HttpExchange httpExchange) throws IOException {
-        System.out.println(httpExchange.getRequestMethod());
-        System.out.println(httpExchange.getRequestURI());
 
         String response = "";
         String method = httpExchange.getRequestMethod();
+
+        if (method.equals("GET")) {
+            String path = getPath(httpExchange);
+            System.out.println(path);
+            c.getFileFromResources(httpExchange, path);
+        }
+
+//        System.out.println(httpExchange.getRequestMethod());
+//        System.out.println(httpExchange.getRequestURI());
+//
+
         String URI = httpExchange.getRequestURI().toString();
+        System.out.println("URI ::" + URI);
         this.uri = Common.parseUri(URI);
 
-        if (method.equals("GET") && uri.length == 2) {
-            response = c.getFileWithUtil("html/Manager/indexManager.html");
-        }
-        if (method.equals("POST") && uri[thirdOnList].equals("addclass")) {
+        if (method.equals("POST")) {
+            System.out.println("\n\n AdD NEW CLASS \n\n");
+
             addNewClass(httpExchange);
-            Common.redirect(httpExchange, "/manager");
+            Common.redirect(httpExchange, "/manager/indexManager.html");
         }
 
         Common.sendResponse(httpExchange, response);
 
     }
 
+    private String getPath(HttpExchange httpExchange) {
+        System.out.println("URI" + httpExchange.getRequestURI().toString());
+        this.uri = Common.parseUri(httpExchange.getRequestURI().toString());
+        String path = ".";
+        for (int i = thirdOnList; i < uri.length; i++) {
+            path += "/";
+            path += uri[i];
+        }
+        return path;
+    }
+
+
     private void addNewClass(HttpExchange httpExchange) throws UnsupportedEncodingException, IOException {
-        Map<String, String> data = Common.formatData(httpExchange);
+        System.out.println("Inside addClass method");
+
+        Map<String, String> data = formatData(httpExchange);
         String className = data.get("classInput").toString();
-        classroomDAO.insertNewClassroom("className");
+        System.out.println("Class name" + className);
+        classroomDAO.insertNewClassroom(className);
     }
 
 
@@ -99,5 +129,27 @@ public class ManagerControler implements HttpHandler {
     private void editLevelOfExperience(Level level, String name, int experience){
         level.setName(name);
         level.setExperience(experience);
+    }
+
+    private Map<String, String> formatData(HttpExchange httpExchange) throws UnsupportedEncodingException, IOException {
+        InputStreamReader isr = new InputStreamReader(httpExchange.getRequestBody(), "utf-8");
+        BufferedReader br = new BufferedReader(isr);
+        String formData = br.readLine();
+
+        System.out.println(formData);
+
+        return parseFormData(formData);
+    }
+
+    private Map<String, String> parseFormData(String formData) throws UnsupportedEncodingException {
+        Map<String, String> map = new HashMap<String, String>();
+        String[] pairs = formData.split("&");
+        for(String pair : pairs){
+            String[] keyValue = pair.split("=");
+
+            String value = new URLDecoder().decode(keyValue[1], "UTF-8");
+            map.put(keyValue[0], value);
+        }
+        return map;
     }
 }

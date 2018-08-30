@@ -35,7 +35,7 @@ public class Student extends User{
         return email;
     }
 
-    @Override
+
     public String getPassword() {
         return password;
     }
@@ -63,7 +63,6 @@ public class Student extends User{
         this.surname = surname;
     }
 
-    @Override
     public void setEmail(String email) {
         this.email = email;
     }
@@ -73,7 +72,6 @@ public class Student extends User{
         this.phone = phone;
     }
 
-    @Override
     public void setPassword(String password) {
         this.password = password;
     }

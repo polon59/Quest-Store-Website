@@ -9,9 +9,9 @@ import java.sql.DriverManager;
 public class DBConnection {
     Connection connection;
     private static final String DB_URL = "jdbc:postgresql://localhost:5432/";
-    private static final String DB_NAME = "newQuestStore";
-    private static final String userName = "postgres";
-    private static final String password = "Polon59";
+    private static final String DB_NAME = "quest";
+    private static final String userName = "quest";
+    private static final String password = "quest";
 
     public DBConnection(){
         connection = createConnection();
