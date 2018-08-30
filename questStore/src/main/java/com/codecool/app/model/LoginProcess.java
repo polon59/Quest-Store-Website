@@ -5,16 +5,22 @@ import java.util.Scanner;//test
 
 public class LoginProcess {
 
-    private UserDAO userDAO;
     private Map<String, String> loginPasswordMap;
-    private boolean isManager = false;
-    private boolean isMentor = false;
-    private boolean isStudent = false;
+    private FactoryDAO factoryDAO;
+    private MentorDAO mentorDAO;
+    private StudentDAO studentDAO;
+    private ManagerDAO managerDAO;
+    private UserDAO userDAO;
 
     Scanner scanner = new Scanner(System.in);
 
-    public LoginProcess(UserDAO userDAO){
-        this.userDAO = userDAO;
+    public LoginProcess(FactoryDAO factoryDAO){
+        this.factoryDAO = factoryDAO;
+        mentorDAO = factoryDAO.getMentorDAO();
+        studentDAO = factoryDAO.getStudentDAO();
+        managerDAO = factoryDAO.getManagerDAO();
+        userDAO = factoryDAO.getUserDAO();
+        
     }
 
     public void loginToSystem(){
@@ -24,9 +30,26 @@ public class LoginProcess {
         System.out.println(loginPasswordMap.toString());
 
         if(isLoginCorrect(email)){
-            isPasswordCorrect(email, password, loginPasswordMap);
-                checkPrivileges(email);}
+            if(isPasswordCorrect(email, password, loginPasswordMap))
+                checkPrivileges(email);
+            else loginError();}
             else loginError();
+    }
+
+    private String checkUserCategory(int systemUserID){
+        String foundUserType = "";
+
+        foundUserType = managerDAO.checkIfIdInTable(systemUserID);
+
+        if (foundUserType.equals("")) {
+            foundUserType = mentorDAO.checkIfIdInTable(systemUserID);
+
+            if (foundUserType.equals("")) {
+                foundUserType = studentDAO.checkIfIdInTable(systemUserID);
+            }
+        }
+
+        return foundUserType;
     }
 
     private void checkPrivileges(String email) {
@@ -34,30 +57,40 @@ public class LoginProcess {
         User user = userDAO.findUserById(systemUserID);
         System.out.println(user.getName());
         System.out.println(user.getClass().getSimpleName());
-        if(user.getClass().getSimpleName().equals("Manager")) loginAsManager();
-        else if(user.getClass().getSimpleName().equals("Mentor")) loginAsMentor();
-        else if(user.getClass().getSimpleName().equals("Student")) loginAsStudent();
-        else databaseError();
+
+        String foundUserType = checkUserCategory(systemUserID);
+
+        
+        if (foundUserType=="manager") {
+            loginAsManager();
+        }
+        else if (foundUserType=="mentor") {
+            loginAsMentor();
+        }
+        else if (foundUserType=="student") {
+            loginAsStudent();
+        }
+        else{
+            databaseError();
+        }
 
     }
 
-
-
-    private void redirectUser(){
-        if(isManager) loginAsManager();
-        if(isMentor) loginAsMentor();
-        if(isStudent) loginAsStudent();
-        if(!isManager && !isMentor && !isStudent) loginError();
-    }
+    // private void redirectUser(){
+    //     if(isManager) loginAsManager();
+    //     if(isMentor) loginAsMentor();
+    //     if(isStudent) loginAsStudent();
+    //     if(!isManager && !isMentor && !isStudent) loginError();
+    // }
 
     public String getUserEmail(){
-        System.out.print("Provide email:");//test
+        System.out.print("Provide email: ");//test
         String userEmail = scanner.nextLine();
         return userEmail;
     }
 
     public String getUserPassword(){
-        System.out.print("Provide password");//test
+        System.out.print("Provide password: ");//test
         String userPassword = scanner.nextLine();
         return userPassword;
     }
@@ -74,24 +107,6 @@ public class LoginProcess {
 
 
     }
-//
-//    private void isUserManager(int systemUserID){
-//        if(systemUserID ==){
-//            isManager = true;
-//            redirectUser();}
-//    }
-//
-//    private void isUserMentor(int systemUserID){
-//        if(systemUserID ==){
-//            isMentor = true;
-//            redirectUser();}
-//    }
-//
-//    private void isUserStudent(int systemUserID){
-//        if(systemUserID ==){
-//            isStudent = true;
-//            redirectUser();}
-//    }
 
     private void loginAsManager(){
         System.out.println("ZALOGOWANO MANAGERA");
