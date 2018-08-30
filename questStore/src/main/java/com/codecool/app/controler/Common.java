@@ -3,6 +3,7 @@ package com.codecool.app.controler;
 
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
+import org.apache.commons.io.IOUtils;
 
 import java.io.*;
 import java.net.URLDecoder;
@@ -25,7 +26,7 @@ public class Common {
 
     }
 
-    static void sendResponse(HttpExchange httpExchange, String response) {
+    static void sendResponse(HttpExchange httpExchange, String response) throws IOException{
         httpExchange.sendResponseHeaders(200, response.length());
         OutputStream os = httpExchange.getResponseBody();
         os.write(response.getBytes());
@@ -60,4 +61,18 @@ public class Common {
         return map;
     }
 
+    public String getFileWithUtil(String fileName) {
+
+        String result = "";
+
+        ClassLoader classLoader = getClass().getClassLoader();
+        try {
+            result = IOUtils.toString(classLoader.getResourceAsStream(fileName));
+            System.out.println(result);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
 }
