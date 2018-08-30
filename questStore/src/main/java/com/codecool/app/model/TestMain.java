@@ -3,6 +3,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class TestMain {
 
@@ -29,22 +30,22 @@ public class TestMain {
         classroomDAO = factoryDAO.getClassroomDAO();
         groupDAO = factoryDAO.getGroupDAO();
 
-        // testManagerDAO();
-        // testUserDAO();
-        // testMentorDAO();
-        // testClassroomDAO();
+        testManagerDAO();
+        testUserDAO();
+        testMentorDAO();
+        testClassroomDAO();
         testGroupDAO();
     }
 
     private void testUserDAO(){
         System.out.println("==========================");
         // test email set
-        userDAO.setEmail("new email", 3);
-        System.out.println("\n");
+        // userDAO.setEmail("new email", 3);
+        // System.out.println("\n");
 
         // test phone set
-        userDAO.setPhone("new phone", 2);
-        System.out.println("\n");
+        // userDAO.setPhone("new phone", 2);
+        // System.out.println("\n");
 
         //test finding user by email
         System.out.println("test finding user by email:");
@@ -80,6 +81,19 @@ public class TestMain {
         String phone = userDAO.getPhone(7);
         System.out.println(phone);
         System.out.println("\n");
+
+        // test finding all user log data
+        System.out.println("test finding all user log data");
+        Map<String,String> map = userDAO.getUsersLogData();
+        System.out.println(map.toString());
+        System.out.println("\n");
+
+        // test finding user id by email
+        System.out.println("test finding all user log data");
+        int id = userDAO.getIdByEmail("karwasz@barabasz.mig");
+        System.out.println(id);
+        System.out.println("\n");
+
     }
 
     private void testMentorDAO(){
@@ -91,15 +105,15 @@ public class TestMain {
         System.out.println("\n");
 
         // test setting mentor classroom
-        System.out.println("test setting mentor classroom");
-        List<Integer> idsClassroom = new ArrayList<>();
-        idsClassroom.add(1);
-        idsClassroom.add(2);
-        idsClassroom.add(3);
-        int idMentor = 2;
-        mentorDAO.setMentorClassroom(idsClassroom, idMentor);
-        System.out.println("mentor classes set successfully");
-        System.out.println("\n");
+        // System.out.println("test setting mentor classroom");
+        // List<Integer> idsClassroom = new ArrayList<>();
+        // idsClassroom.add(1);
+        // idsClassroom.add(2);
+        // idsClassroom.add(3);
+        // int idMentor = 2;
+        // mentorDAO.setMentorClassroom(idsClassroom, idMentor);
+        // System.out.println("mentor classes set successfully");
+        // System.out.println("\n");
 
         // test finding mentor classes by mentorID
         System.out.println("test finding mentor classes by mentorID");
@@ -115,7 +129,7 @@ public class TestMain {
         // test finding managerID by userID
         System.out.println("==========================");
         System.out.println("test finding managerID by userID");
-        int managerID = managerDAO.getIdManager(5);
+        int managerID = managerDAO.getIdManager(1);
         System.out.println(managerID);
         System.out.println("\n");
         
@@ -164,10 +178,10 @@ public class TestMain {
          System.out.println("\n");
 
         // test insert new classroom
-        Classroom classToAdd = new Classroom("new classroom", 44);
-        System.out.println("OLD ID = "+ classToAdd.getIDClassroom());
-        classroomDAO.insertNewClassroom(classToAdd);
-        System.out.println("NEW ID = "+ classToAdd.getIDClassroom());
+        // Classroom classToAdd = new Classroom("new classroom", 44);
+        // System.out.println("OLD ID = "+ classToAdd.getIDClassroom());
+        // classroomDAO.insertNewClassroom(classToAdd);
+        // System.out.println("NEW ID = "+ classToAdd.getIDClassroom());
 
     }
 
