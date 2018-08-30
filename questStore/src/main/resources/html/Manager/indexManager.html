@@ -3,6 +3,7 @@
 
 <head>
 <title>MANAGER SITE</title>
+    <meta charset="utf-8">
 <link rel="stylesheet" href="../../css/style.css">
 </head>
 
@@ -10,8 +11,8 @@
 
 <div class="navbar color1">
     <ul class="navlist">
-    <li class="navOpt"><a class="asapWhite" href="indexManager.html">HOME</a></li>
-    <li class="navOpt"><a class="asapWhite" href="profileManager.html">MY ACCOUNT</a></li>
+    <li class="navOpt"><a class="asapWhite" href="manager">HOME</a></li>
+    <li class="navOpt"><a class="asapWhite" href="manager/account">MY ACCOUNT</a></li>
     </ul>
 </div>
 
@@ -28,18 +29,18 @@
     <div class="mainOptions asapDark">
         <div class="gallery">
             <!-- add mentor link tocreation page here -->
-                <a target="_self" href="../Mentor/indexMentor.html"> 
-                    <img src="../../images/manager/manager_mentorIkon.png" alt="">
+                <a target="_self" href="/Mentor/indexMentor.html">
+                    <img src="/images/manager/manager_mentorIkon.png" alt="">
                 </a>
                 <h5>MENTOR</h5>
         </div>
         <div class="gallery">
 
-            <button class="buttonIkon" onclick="toggleClassCreation()"><img src="../../images/manager/manager_classIkon.png"></button>
+            <button class="buttonIkon" onclick="toggleClassCreation()"><img src="/images/manager/manager_classIkon.png"></button>
 	    <h5>CLASS</h5>	    
 
             <section id="createClassSection" style="display:none">
-            <form id="createClass" action="" method="post" onsubmit="return toggleClassSubmitability()"> <!--TODO: action-->
+            <form id="createClass" action="/manager/addclass" method="post" onsubmit="return toggleClassSubmitability()"> <!--TODO: action-->
             <label for="className">ENTER CLASS NAME</label><br>
             <input type="text" name="classInput" id="class-name" onkeyup="toggleClassSubmitability()"><br>
             <div class="error" id="classname-error" style="display: none">Enter class name</div>
@@ -49,11 +50,11 @@
 </section>
 </div>
         <div class="gallery">
-<button class="buttonIkon" onclick="toggleLevelCreation()"><img src="../../images/manager/manager_levelIkon.png"></button>
+<button class="buttonIkon" onclick="toggleLevelCreation()"><img src="/images/manager/manager_levelIkon.png"></button>
 <h5>LEVEL</h5>
 
 <section id="createLevelSection" style="display:none">
-        <form id="createLevel" action="" method="post" onsubmit="return toggleLevelSubmitability()"> <!--TODO: action-->
+        <form id="createLevel" action="/manager/addlevel" method="post" onsubmit="return toggleLevelSubmitability()"> <!--TODO: action-->
             <label for="levelName">ENTER LEVEL NAME</label><br>
             <input type="text" name="levelNameInput" id="level-name" required> 
             <br>
