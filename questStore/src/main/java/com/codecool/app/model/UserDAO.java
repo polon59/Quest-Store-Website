@@ -60,6 +60,7 @@ public class UserDAO {
         String surname = null;
         String userEmail = null;
         String phone = null;
+        String password = null;
 
         try {
             PreparedStatement ps = connection.prepareStatement(findByEmail);
@@ -72,8 +73,9 @@ public class UserDAO {
                 surname = result.getString("surname");
                 userEmail = result.getString("email");
                 phone = result.getString("phone");
+                password = result.getString("password");
             }
-            user = new User(id, name, surname, userEmail, phone);
+            user = new User(id, name, surname, userEmail, phone, password);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -119,6 +121,7 @@ public class UserDAO {
         String surname = null;
         String userEmail = null;
         String phone = null;
+        String password = null;
 
         try {
             PreparedStatement ps = connection.prepareStatement(findById);
@@ -131,8 +134,10 @@ public class UserDAO {
                 surname = result.getString("surname");
                 userEmail = result.getString("email");
                 phone = result.getString("phone");
+                password = result.getString("password");
+
             }
-            user = new User(userID, name, surname, userEmail, phone);
+            user = new User(userID, name, surname, userEmail, phone, password);
 
         } catch (SQLException e) {
             e.printStackTrace();
