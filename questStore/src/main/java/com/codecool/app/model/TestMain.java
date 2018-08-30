@@ -18,6 +18,7 @@ public class TestMain {
         
         TestMain test = new TestMain();
         test.testAllDAO();
+        
 
     }
 
@@ -30,11 +31,14 @@ public class TestMain {
         classroomDAO = factoryDAO.getClassroomDAO();
         groupDAO = factoryDAO.getGroupDAO();
 
-        testManagerDAO();
-        testUserDAO();
-        testMentorDAO();
-        testClassroomDAO();
-        testGroupDAO();
+        LoginProcess loginProcess = new LoginProcess(userDAO);
+        loginProcess.loginToSystem();
+
+        // testManagerDAO();
+        // testUserDAO();
+        // testMentorDAO();
+        // testClassroomDAO();
+        // testGroupDAO();
     }
 
     private void testUserDAO(){
@@ -47,40 +51,40 @@ public class TestMain {
         // userDAO.setPhone("new phone", 2);
         // System.out.println("\n");
 
-        //test finding user by email
-        System.out.println("test finding user by email:");
-        System.out.println(userDAO.findUserByEmail("jm@o2.pl").toString());
-        System.out.println("\n");        
+        // //test finding user by email
+        // System.out.println("test finding user by email:");
+        // System.out.println(userDAO.findUserByEmail("jm@o2.pl").toString());
+        // System.out.println("\n");        
 
-        //test finding user by id
-        System.out.println("test finding user by id:");
-        User foundUser =  userDAO.findUserById(7);
-        System.out.println(foundUser.toString()); 
-        System.out.println("\n");
+        // //test finding user by id
+        // System.out.println("test finding user by id:");
+        // User foundUser =  userDAO.findUserById(7);
+        // System.out.println(foundUser.toString()); 
+        // System.out.println("\n");
         
-        //test finding user's name
-        System.out.println("test finding user's name:");
-        String name = userDAO.getName(7);
-        System.out.println(name);
-        System.out.println("\n");
+        // //test finding user's name
+        // System.out.println("test finding user's name:");
+        // String name = userDAO.getName(7);
+        // System.out.println(name);
+        // System.out.println("\n");
 
         // test finding user's surname
-        System.out.println("test finding user's surname");
-        String surname = userDAO.getSurname(7);
-        System.out.println(surname);
-        System.out.println("\n");
+        // System.out.println("test finding user's surname");
+        // String surname = userDAO.getSurname(7);
+        // System.out.println(surname);
+        // System.out.println("\n");
 
         // test finding user's email
-        System.out.println("test finding user's email");
-        String email = userDAO.getEmail(7);
-        System.out.println(email);
-        System.out.println("\n");
+        // System.out.println("test finding user's email");
+        // String email = userDAO.getEmail(7);
+        // System.out.println(email);
+        // System.out.println("\n");
 
         // test finding user's phone
-        System.out.println("test finding user's phone");
-        String phone = userDAO.getPhone(7);
-        System.out.println(phone);
-        System.out.println("\n");
+        // System.out.println("test finding user's phone");
+        // String phone = userDAO.getPhone(7);
+        // System.out.println(phone);
+        // System.out.println("\n");
 
         // test finding all user log data
         System.out.println("test finding all user log data");
@@ -89,10 +93,10 @@ public class TestMain {
         System.out.println("\n");
 
         // test finding user id by email
-        System.out.println("test finding all user log data");
-        int id = userDAO.getIdByEmail("karwasz@barabasz.mig");
-        System.out.println(id);
-        System.out.println("\n");
+        // System.out.println("test finding all user log data");
+        // int id = userDAO.getIdByEmail("karwasz@barabasz.mig");
+        // System.out.println(id);
+        // System.out.println("\n");
 
     }
 

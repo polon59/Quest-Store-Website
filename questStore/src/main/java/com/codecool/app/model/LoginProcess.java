@@ -1,4 +1,4 @@
-package com.codecool.app.model;
+// package com.codecool.app.model;
 
 import java.util.Map;
 import java.util.Scanner;//test
@@ -13,10 +13,15 @@ public class LoginProcess {
 
     Scanner scanner = new Scanner(System.in);
 
+    public LoginProcess(UserDAO userDAO){
+        this.userDAO = userDAO;
+    }
+
     public void loginToSystem(){
         String email = getUserEmail();
         String password = getUserPassword();
-        Map<String, String> loginPasswordMap = userDAO.getUsersLogData();
+        loginPasswordMap = userDAO.getUsersLogData();
+        System.out.println(loginPasswordMap.toString());
 
         if(isLoginCorrect(email)){
             isPasswordCorrect(email, password, loginPasswordMap);
@@ -27,6 +32,8 @@ public class LoginProcess {
     private void checkPrivileges(String email) {
         int systemUserID = userDAO.getIdByEmail(email);
         User user = userDAO.findUserById(systemUserID);
+        System.out.println(user.getName());
+        System.out.println(user.getClass().getSimpleName());
         if(user.getClass().getSimpleName().equals("Manager")) loginAsManager();
         else if(user.getClass().getSimpleName().equals("Mentor")) loginAsMentor();
         else if(user.getClass().getSimpleName().equals("Student")) loginAsStudent();
