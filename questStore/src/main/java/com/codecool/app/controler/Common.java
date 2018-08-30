@@ -13,11 +13,6 @@ import java.util.Map;
 
 public class Common {
 
-    private final int firstOnList = 0;
-    private final int secondOnList = 1;
-    private final int thirdOnList = 2;
-    private final int fourthOnList = 3;
-
     static void redirect(HttpExchange httpExchange, String location) {
         Headers headers = httpExchange.getResponseHeaders();
         headers.add("Location", location);
@@ -37,13 +32,13 @@ public class Common {
         os.close();
     }
 
-    private String[] parseUri(String URI) {
+    static String[] parseUri(String URI) {
         String[] parts = URI.split("/");
         return parts;
     }
 
 
-    public Map<String, String> formatData(HttpExchange httpExchange) throws UnsupportedEncodingException, IOException {
+    static Map<String, String> formatData(HttpExchange httpExchange) throws UnsupportedEncodingException, IOException {
         InputStreamReader isr = new InputStreamReader(httpExchange.getRequestBody(), "utf-8");
         BufferedReader br = new BufferedReader(isr);
         String formData = br.readLine();
