@@ -16,6 +16,29 @@ public class ManagerDAO {
         this.connection = connection;
         this.commonDAO = commonDAO;
     }
+
+    public String checkIfIdInTable(int id){
+        String findAllIds = "SELECT id_systemuser FROM manager;";
+        List<Integer> allIds = new ArrayList<>();
+
+        try {
+            PreparedStatement ps = connection.prepareStatement(findAllIds);
+            ResultSet result = commonDAO.getData(connection, ps);
+
+            while (result.next()) {
+                allIds.add(result.getInt("id_systemuser"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        if (allIds.contains(id)) {
+            return "manager";
+
+        } else {
+            return "";
+        }
+    }
     
 
     public int getIdManager(int userId){
