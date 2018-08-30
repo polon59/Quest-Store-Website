@@ -1,3 +1,5 @@
+package com.codecool.app.model;
+
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.ResultSet;
