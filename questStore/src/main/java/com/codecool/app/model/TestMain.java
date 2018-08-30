@@ -11,6 +11,7 @@ public class TestMain {
     UserDAO userDAO;
     ManagerDAO managerDAO;
     MentorDAO mentorDAO;
+    ClassroomDAO classroomDAO;
 
 
     public static void main(String[] args) {
@@ -26,10 +27,12 @@ public class TestMain {
         userDAO = factoryDAO.getUserDAO();
         managerDAO = factoryDAO.getManagerDAO();
         mentorDAO = factoryDAO.getMentorDAO();
+        classroomDAO = factoryDAO.getClassroomDAO();
 
-        testManagerDAO();
-        testUserDAO();
-        testMentorDAO();
+        // testManagerDAO();
+        // testUserDAO();
+        // testMentorDAO();
+        testClassroomDAO();
     }
 
     private void testUserDAO(){
@@ -86,14 +89,6 @@ public class TestMain {
         System.out.println(mentorID);
         System.out.println("\n");
 
-        // test finding mentor classes by mentorID
-        System.out.println("test finding mentor classes by mentorID");
-        List<Classroom> classroomList = mentorDAO.getMentorClassrooms(1);
-        for (Classroom classroom : classroomList) {
-            System.out.println(classroom.toString());
-        }
-        System.out.println("\n");
-
         // test setting mentor classroom
         System.out.println("test setting mentor classroom");
         List<Integer> idsClassroom = new ArrayList<>();
@@ -104,7 +99,16 @@ public class TestMain {
         mentorDAO.setMentorClassroom(idsClassroom, idMentor);
         System.out.println("mentor classes set successfully");
         System.out.println("\n");
+
+        // test finding mentor classes by mentorID
+        System.out.println("test finding mentor classes by mentorID");
+        List<Classroom> classroomList = mentorDAO.getMentorClassrooms(2);
+        for (Classroom classroom : classroomList) {
+            System.out.println(classroom.toString());
+        }
+        System.out.println("\n");
     }
+
 
     private void testManagerDAO(){
         // test finding managerID by userID
@@ -114,6 +118,56 @@ public class TestMain {
         System.out.println(managerID);
         System.out.println("\n");
         
+    }
+
+
+    private void testClassroomDAO(){
+        // test finding classroom id by classroom name
+        System.out.println("==========================");
+        System.out.println("test finding classroom id by classroom name");
+        int classroomId;
+        String classroomName = "web room";
+        classroomId = classroomDAO.getIdClassroom(classroomName);
+        System.out.println(classroomId);
+        System.out.println("\n");
+
+
+         // test finding classroom name by classroom id
+         System.out.println("test finding classroom name by classroom id");
+         int id = 2;
+         String name;
+         name = classroomDAO.getName(id);
+         System.out.println(name);
+         System.out.println("\n");
+
+
+         // test finding all classrooms
+         System.out.println("test finding all classrooms");
+         List<Classroom> classrooms = new ArrayList<>();
+         classrooms = classroomDAO.getListOfAll();
+         for (Classroom classroom : classrooms) {
+             System.out.println(classroom.toString());
+         }
+         System.out.println("\n");
+
+
+         // test finding classroom by name
+         System.out.println("test finding classroom by name");
+         System.out.println(classroomDAO.findClassroom("python basic").toString());
+         System.out.println("\n");
+
+
+         // test finding classroom by id
+         System.out.println("test finding classroom by name");
+         System.out.println(classroomDAO.findClassroom(1).toString());
+         System.out.println("\n");
+
+        // test insert new classroom
+        Classroom classToAdd = new Classroom("new classroom", 44);
+        System.out.println("OLD ID = "+ classToAdd.getIDClassroom());
+        classroomDAO.insertNewClassroom(classToAdd);
+        System.out.println("NEW ID = "+ classToAdd.getIDClassroom());
+
     }
 
 }
