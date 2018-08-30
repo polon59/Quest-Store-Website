@@ -4,6 +4,7 @@ import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -74,10 +75,39 @@ public class UserDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return user;
-        
     }
+
+
+    public Map<String,String> getUsersLogData(){
+        String findLogData = "SELECT * FROM systemUser;";
+        Map<String,String> logData = new HashMap<>();
+        String email;
+        String password;
+
+        try {
+            PreparedStatement ps = connection.prepareStatement(findLogData);
+            ResultSet result = commonDAO.getData(connection, ps);
+
+            while (result.next()) {
+                email = result.getString("email");
+                password = result.getString("password");
+                logData.put(email, password);
+            }
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return logData;
+    }
+
+
+    public int getIdByEmail(String email){
+        User foundUser = findUserByEmail(email);
+        int id = foundUser.getUserID();
+        return id;
+    }
+
 
     public User findUserById(int userID){
         String findById = "SELECT * FROM systemUser WHERE id_systemUser=?;";
@@ -131,4 +161,6 @@ public class UserDAO {
         String phone = foundUser.getPhone();
         return phone;
     }
+
+
 }
