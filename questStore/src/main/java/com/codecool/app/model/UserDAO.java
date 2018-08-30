@@ -1,3 +1,5 @@
+package com.codecool.app.model;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
@@ -7,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 
 public class UserDAO {
 
@@ -81,7 +84,7 @@ public class UserDAO {
 
     public Map<String,String> getUsersLogData(){
         String findLogData = "SELECT * FROM systemUser;";
-        Map<String,String> logData = new HashMap<>();
+        Map<String,String> logData = new HashMap<String,String>();
         String email;
         String password;
 
