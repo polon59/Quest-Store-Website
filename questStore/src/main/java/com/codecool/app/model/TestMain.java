@@ -12,6 +12,7 @@ public class TestMain {
     MentorDAO mentorDAO;
     ClassroomDAO classroomDAO;
     GroupDAO groupDAO;
+    StudentDAO studentDAO;
 
 
     public static void main(String[] args) {
@@ -30,8 +31,9 @@ public class TestMain {
         mentorDAO = factoryDAO.getMentorDAO();
         classroomDAO = factoryDAO.getClassroomDAO();
         groupDAO = factoryDAO.getGroupDAO();
+        studentDAO = factoryDAO.getStudentDAO();
 
-        LoginProcess loginProcess = new LoginProcess(userDAO);
+        LoginProcess loginProcess = new LoginProcess(factoryDAO);
         loginProcess.loginToSystem();
 
         // testManagerDAO();
