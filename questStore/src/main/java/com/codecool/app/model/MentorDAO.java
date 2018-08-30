@@ -19,7 +19,7 @@ public class MentorDAO {
 
 
     public int getIdMentor(int userId){
-        String findByUserId = "SELECT id_mentor FROM mentor WHERE id_sustemUser=?;";
+        String findByUserId = "SELECT id_mentor FROM mentor WHERE id_systemUser=?;";
         int idMentor = Integer.MAX_VALUE;
 
         try {
