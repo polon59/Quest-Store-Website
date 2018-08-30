@@ -4,10 +4,19 @@ package com.codecool.app.controler;
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
+import java.net.URLDecoder;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Common {
+
+    private final int firstOnList = 0;
+    private final int secondOnList = 1;
+    private final int thirdOnList = 2;
+    private final int fourthOnList = 3;
 
     static void redirect(HttpExchange httpExchange, String location) {
         Headers headers = httpExchange.getResponseHeaders();
@@ -18,6 +27,7 @@ public class Common {
             e.printStackTrace();
         }
         httpExchange.close();
+
     }
 
     static void sendResponse(HttpExchange httpExchange, String response) {
@@ -25,6 +35,34 @@ public class Common {
         OutputStream os = httpExchange.getResponseBody();
         os.write(response.getBytes());
         os.close();
+    }
+
+    private String[] parseUri(String URI) {
+        String[] parts = URI.split("/");
+        return parts;
+    }
+
+
+    public Map<String, String> formatData(HttpExchange httpExchange) throws UnsupportedEncodingException, IOException {
+        InputStreamReader isr = new InputStreamReader(httpExchange.getRequestBody(), "utf-8");
+        BufferedReader br = new BufferedReader(isr);
+        String formData = br.readLine();
+
+        System.out.println(formData);
+
+        return parseFormData(formData);
+    }
+
+    static Map<String, String> parseFormData(String formData) throws UnsupportedEncodingException {
+        Map<String, String> map = new HashMap<String, String>();
+        String[] pairs = formData.split("&");
+        for(String pair : pairs){
+            String[] keyValue = pair.split("=");
+
+            String value = new URLDecoder().decode(keyValue[1], "UTF-8");
+            map.put(keyValue[0], value);
+        }
+        return map;
     }
 
 }
